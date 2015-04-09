@@ -71,6 +71,7 @@ a {
   position: fixed;
   transition: opacity 0.2s ease-in-out;
   width: 100%;
+  z-index: 9999;
 }
 
 .fixedHeaderContainer.visible {
@@ -107,7 +108,7 @@ a {
 }
 
 #header_wrap {
-	padding-top: 10em;
+	padding-top: 5em;
 }
 
 #footer_wrap {
@@ -194,6 +195,24 @@ a#fb_group_link {
 	margin: 20px 0;
 }
 
+.ytVideo {
+  height: 0;
+  overflow: hidden;
+	padding-bottom: 53.4%; /* 16:9 */
+	padding-top: 25px;
+  position: relative;
+}
+
+.ytVideo iframe,
+.ytVideo object,
+.ytVideo embed {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 @media only screen and (min-device-width: 480px) { 
   img.projectLogo {
     margin-bottom: 10px;
@@ -201,7 +220,7 @@ a#fb_group_link {
   }
   
 	#header_wrap {
-		padding-top: 15em;
+		padding-top: 8em;
 	}
 	
 	.gridBlock {
