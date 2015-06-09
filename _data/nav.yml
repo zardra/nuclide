@@ -1,0 +1,11 @@
+- title: Docs
+  href: docs/
+  category: docs
+
+- title: Support
+  href: support.html
+  category: support
+  
+- title: Github
+  href: http://github.com/facebook/nuclide
+  category: github
