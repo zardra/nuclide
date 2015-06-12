@@ -1,7 +1,10 @@
 - title: Quick Start
   items:
-  - id: getting-started
-  - id: hello-world
-- title: Some Other Docs
+  - id: setup
+  - id: quick-tour
+- title: Features
   items:
-  - id: not-really-here
+  - id: remote
+  - id: flow
+  - id: hack
+  - id: hg

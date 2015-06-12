@@ -1,5 +1,5 @@
 # Site settings
-permalink: /blog/:year/:month/:day/:title.html
+permalink: /blog/:year/:month/:day/:title/
 title: Nuclide
 tagline: A unified IDE
 fbappid: ""
@@ -19,7 +19,7 @@ collections:
     permalink: /docs/:name/
   support:
     output: true
-    permalink: /support.html
+    permalink: /support/
 
 sass:
   style: :compressed
