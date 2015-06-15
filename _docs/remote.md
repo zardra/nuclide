@@ -5,6 +5,8 @@ layout: docs
 permalink: /docs/remote/
 ---
 
+![Nuclide connecting to a remote server](static/images/docs/NuclideRemote.gif)
+
 Nuclide includes a `nuclide-server` package which creates the bridge between 
 your local client version of Nuclide, and the development server that you want 
 to work on. It has its own setup process that is outlined below. 

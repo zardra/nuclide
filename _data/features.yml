@@ -1,28 +1,31 @@
 - title: Remote Development
   text: >
-    Chuck pariatur boudin round. Frankfurter duis enim elit venison reprehenderit brisket pork loin.  
+    Connect to your remote servers, and get full access to the file tree within Nuclide.  
     
-    [**Get Started**](/docs/remote.html)
-  image: 
+    [**Get Started**](/docs/remote/)
+  image: images/docs/NuclideRemote.gif
   
-- title: Hack
+- title: Developing JavaScript
   text: >
-    Aliquip ea cillum elit enim ullamco in commodo boudin jowl nulla ad do.   
+    Improve the quality of your JavaScript with build in support for [Flow](http://flowtype.org), 
+    including autocomplete, jump-to-definition, and inline errors. 
     
-    [**Read More**](/docs/hack.html)
-  image: 
+    [**Read More**](/docs/flow/)
+  image: images/docs/FlowClickDefine.gif
   
-- title: <a href="/test/">Flow</a>
+- title: Developing Hack
   text: >
-    Anim capicola tempor, laborum ex aute jowl chicken nostrud andouille non.   
+    Nuclide is the first IDE with support for Hack, including autocomplete, jump-to-definition, 
+    inline errors, and an omni-search bar for your project.     
     
-    [**Read More**](/docs/flow.html)
-  image:
+    [**Read More**](/docs/hack/)
+  image: images/docs/NuclideSearch.gif
   
-- title: Mercurial
+- title: Mercurial Support
   text: >
-    Proident corned beef biltong ut filet mignon duis dolore commodo nostrud ipsum in ad nisi cow ribeye.   
+    Local changes to files in a Mercurial repo will be reflected in Atom's file tree and UI, as 
+    Atom does natively for Git repos.
     
-    [**Read More**](/docs/hack.html)
+    [**Read More**](/docs/hg/)
   image:
   

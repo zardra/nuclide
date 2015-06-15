@@ -1,8 +1,8 @@
 - title: Quick Start
   items:
   - id: setup
-  - id: quick-tour
-- title: Features
+  - id: shortcuts
+- title: Feature Guides
   items:
   - id: remote
   - id: flow
