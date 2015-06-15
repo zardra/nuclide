@@ -8,7 +8,7 @@
 - title: Developing JavaScript
   text: >
     Improve the quality of your JavaScript with build in support for [Flow](http://flowtype.org), 
-    including autocomplete, jump-to-definition, and inline errors. 
+    including autocomplete, jump-to-definition, and inline errors.  
     
     [**Read More**](/docs/flow/)
   image: images/docs/FlowClickDefine.gif
@@ -24,8 +24,8 @@
 - title: Mercurial Support
   text: >
     Local changes to files in a Mercurial repo will be reflected in Atom's file tree and UI, as 
-    Atom does natively for Git repos.
+    Atom does natively for Git repos.  
     
     [**Read More**](/docs/hg/)
-  image:
+  image: images/docs/MercurialFileTreeLineColours.png
   
