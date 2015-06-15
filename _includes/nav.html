@@ -1,6 +1,9 @@
 <div id="fixed_header" class="fixedHeaderContainer{% if include.alwayson %} visible{% endif %}">
   <header>
-    <a href="{{ site.url }}{{ site.baseurl }}"><img src="{{ site.baseurl }}/static/logo.png" /><h2>{{ site.title }}</h2></a>
+    <a href="{{ site.url }}{{ site.baseurl }}">
+      <img src="{{ site.baseurl }}/static/logo.png" height="30" width="25" alt="">
+      <h2>{{ site.title }}</h2>
+    </a>
     <div class="navigationWrapper navigationFull" id="flat_nav">
       <nav class="navigation">
         <ul>
