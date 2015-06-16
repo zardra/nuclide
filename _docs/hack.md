@@ -7,7 +7,7 @@ permalink: /docs/hack/
 
 Nuclide has been built from the start to provide a great IDE experience for Hack development. If
 you have Hack installed on your local system or on a server, and open a project with Nuclide, 
-you'll get support for click-to-define (`cmd-click`) type-hinting:
+you'll get support for linting, auto complete, click to definition (`cmd-click`), type hints on mouse hover:
 
 ![Hack type hinting](static/images/docs/HackTypeHinting.png)
 

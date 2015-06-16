@@ -19,7 +19,7 @@
     inline errors, and an omni-search bar for your project.     
     
     [**Read More**](/docs/hack/)
-  image: images/docs/NuclideSearch.gif
+  image: images/docs/HackAutocomplete.gif
   
 - title: Mercurial Support
   text: >
@@ -28,4 +28,4 @@
     
     [**Read More**](/docs/hg/)
   image: images/docs/MercurialFileTreeLineColours.png
-  
+
