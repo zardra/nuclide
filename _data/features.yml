@@ -7,7 +7,7 @@
   
 - title: Developing JavaScript
   text: >
-    Improve the quality of your JavaScript with build in support for [Flow](http://flowtype.org), 
+    Improve the quality of your JavaScript with built in support for [Flow](http://flowtype.org), 
     including autocomplete, jump-to-definition, and inline errors.  
     
     [**Read More**](/docs/flow/)
