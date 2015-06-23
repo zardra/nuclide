@@ -7,13 +7,13 @@ permalink: /docs/remote/
 
 ![Nuclide connecting to a remote server](static/images/docs/NuclideRemote.gif)
 
-Nuclide includes a `nuclide-server` package which creates the bridge between 
-your local client version of Nuclide, and the development server that you want 
-to work on. It has its own setup process that is outlined below. 
+Nuclide includes a `nuclide-server` package which creates the bridge between
+your local client version of Nuclide, and the development server that you want
+to work on. It has its own setup process that is outlined below.
 
 ## Nuclide Server Setup
 
-The following versions are required before installing the nuclide-server 
+The following versions are required before installing the nuclide-server
 package:
 
 + Python 2.6 or later.
@@ -27,38 +27,66 @@ install Watchman for your server's platform as described.
 ensure that the server exposes an SSH daemon that you can connect to from your
 client machine, and that you know the credentials required - you will need to
 have an existing private key that can be used to connect to the server.
++ Port 9090-9093 exposed.  Note: you can specify another port in
+**Remote Server Command**. see "Connecting to your server from Nuclide" below.
 
 ### Installing via NPM
 
 The easiest way to get nuclide-server is from NPM:
 
 ```bash
-npm install -g nuclide
+npm install -g nuclide-server
 ```
 
-We use the `-g` switch to ensure Nuclide is added to your server's `$PATH`, 
-which will make connecting to it easier. 
+We use the `-g` switch to ensure Nuclide is installed as a node global package.
 
 You do not need to explicitly start the server since the Nuclide client will
 attempt to do so when it first connects over SSH.
 
-### Installing from Source
+### Troubleshooting Install
 
-Building Nuclide Server is fairly straightforward, just run the following 
-command from the root of the repository:
+First verify that you are using the correct node version by running:
 
 ```bash
-./scripts/dev/setup --no-atom
+node --version
 ```
 
-Note that the `--no-atom` flag ensures that only Nuclide's Node packages are
-installed on the server, and not those used by the Atom client itself.
+and verifying that you have version 0.12.0 or higher.
 
-You should now also add to your `$PATH` the path of the 
-pkg/nuclide/server/start-nuclide-server script to make connection simpler.
+If you get EACCES errors when you try and npm install then you likely do not
+have your NPM properly configured for installing global packages without root.
+To fix this problem instead install in a directory your user owns like this:
 
-You do not need to explicitly start the server since the Nuclide client will
-attempt to do so when it first connects over SSH.
+```bash
+npm config set prefix '~/.npm_packages'
+```
+
+and add
+
+```bash
+PATH=$PATH:$HOME/.npm_packages/bin; export PATH
+```
+
+to the end of your .profile.  Now you should be able to run:
+
+```bash
+npm install -g nuclide-server
+```
+
+without errors.
+
+If you previously ran npm install as root you may need to correct the
+permissions on your .npm directory by doing this:
+
+```bash
+sudo chown -R userid:userid .npm
+```
+
+where userid is your userid.  If you still get errors you may need to do this:
+
+```bash
+npm clear cache
+```
 
 ## Connecting to your server from Nuclide
 
@@ -72,19 +100,23 @@ You'll see the following dialog:
 ![Connect dialog](static/images/docs/connect.png)
 
 Note that all of the values shown above are examples and will vary based on
-your own username, filesystem, and SSH and Nuclide configuration. The options 
+your own username, filesystem, and SSH and Nuclide configuration. The options
 are as follows:
 
 + **Username** - the username that you would use to connect to your server
 + **Server** - the address of your server
-+ **Initial Directory** - the path that you want to connect to initially on 
++ **Initial Directory** - the path that you want to connect to initially on
 your server
 + **SSH Port** - the port used to connect to your server (default is 22)
 + **Private Key** - the local path to your private SSH key for this server
-+ **Use ssh-agent-based authentication** - TODO: Describe
+(note: if your key is password protected you have to add it to ssh-agent and use
+the ssh-agent-based authentication option)
++ **Use ssh-agent-based authentication** - the server will try and talk to ssh
+agent.
++ **Password** - your password if you wish to use password authentication.
 + **Remote Server Command** - if you have correctly added the server script
-to your path as described above, this should just be `start-nuclide-server`.
-If not, you need to supply the full path to the location of this script. You 
+to your path as described above, this should just be `nuclide-start-server`.
+If not, you need to supply the full path to the location of this script. You
 can either let the script pick an open port for you from a list of predefined
 ports, or start the server on a specific port using the `-p` flag.
 For example `start-nuclide-server -p 9099`
