@@ -1,3 +1,1 @@
-# nuclide
-
-Stay tuned
+# nuclide.io
