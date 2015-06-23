@@ -6,7 +6,7 @@ fbappid: ""
 gacode: "UA-44373548-2"
 description: An open IDE for React Native, web, and native mobile development, built as a suite of packages on top of Atom to provide hackability and the support of an active community.
 baseurl: "" # the subpath of your site, e.g. /nuclide/
-url: "nuclide.io" # the base hostname & protocol for your site
+url: "http://nuclide.io" # the base hostname & protocol for your site
 ghrepo: "facebook/nuclide"
 
 # Build settings
