@@ -7,7 +7,7 @@ category: support
 ## Need help?
 
 Do not hesitate to ask questions using the following channels, or to
-submit pull request!
+submit a pull request!
 
 ### GitHub issues
 
