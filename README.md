@@ -2,7 +2,7 @@
 
 ### Run the Site Locally
 
-1. Make sure you Ruby and [RubyGems](https://rubygems.org/) installed
+1. Make sure you have Ruby and [RubyGems](https://rubygems.org/) installed
 2. Make sure you have [Bundler](http://bundler.io/) installed
 
         gem install bundler
