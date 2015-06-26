@@ -1,11 +1,6 @@
-.DS_STORE
+.sass-cache/
 _site/
-Gemfile
-Gemfile.lock
-*.swo
-*.swp
-_site
-.sass-cache
-*.psd
-*~
 
+# Ignore locked gems because GitHub Pages controls the gems in production, not Nuclide. Omit the
+# lock so `bundle install` always installs the latest.
+Gemfile.lock
