@@ -33,8 +33,6 @@ If you want to build Nuclide from source, you must have the following tools inst
 + Node 0.12.0 or later.
 + `node`, `npm`, `apm`, and `git` must be on your `$PATH`.
 
-The [linter](https://atom.io/packages/linter) package is optional, but *strongly recommended*.
-
 Of course, [Flow](/docs/flow/), [Hack](/docs/hack/), and [Mercurial](/docs/hg/) are 
 also required if you wish to use their relevant Nuclide integrations - please read the guide for 
 each package to see any additional requirements.
