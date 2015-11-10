@@ -5,7 +5,7 @@ layout: docs
 permalink: /docs/setup/
 ---
 
-### Installation
+## Installation
 
 The easiest way to get Nuclide is to install it from Atom itself.
 In Atom, open the **Settings** pane and navigate to the **Install** tab.
@@ -24,6 +24,20 @@ a few seconds for the installer to determine which Nuclide packages it needs to 
 To determine whether the installer worked, go to the **Settings** pane in Atom and navigate to the **Packages**
 tab. From there, filter your installed packages by `nuclide-` and you should see quite a few results!
 
+### Recommended Dependencies
+
+To benefit from all of Nuclide's features, we recommend you also install the following:
+
+* [Flow](/docs/flow/)
+* [Hack](/docs/hack/)
+* [Mercurial](/docs/hg/)
+* [Watchman](https://facebook.github.io/watchman/) - version 3.2 or above. It must be in
+  `/usr/local/bin/` or in your `$PATH`. Without Watchman, Nuclide will lose some functionality: for
+  instance, in the
+  [hg-repository](https://github.com/facebook/nuclide/tree/master/pkg/nuclide/hg-repository),
+  [server](https://github.com/facebook/nuclide/tree/master/pkg/nuclide/server), and
+  [quick-open](https://github.com/facebook/nuclide/tree/master/pkg/nuclide/quick-open) packages.
+
 ### Building from Source
 
 If you want to build Nuclide from source, you must have the following tools installed:
@@ -33,11 +47,7 @@ If you want to build Nuclide from source, you must have the following tools inst
 + Node 0.12.0 or later.
 + `node`, `npm`, `apm`, and `git` must be on your `$PATH`.
 
-Of course, [Flow](/docs/flow/), [Hack](/docs/hack/), and [Mercurial](/docs/hg/) are 
-also required if you wish to use their relevant Nuclide integrations - please read the guide for 
-each package to see any additional requirements.
-
-Building Nuclide is fairly straightforward, just run the following command from the root of the 
+Building Nuclide is fairly straightforward, just run the following command from the root of the
 repository:
 
 ```bash
@@ -50,14 +60,14 @@ or, if you're using Windows:
 python scripts\dev\setup
 ```
 
-This script will fetch the appropriate dependencies from npm and perform any necessary build steps. 
+This script will fetch the appropriate dependencies from npm and perform any necessary build steps.
 
 ## Starting Nuclide
 
-Once you've installed or built Nuclide, just run `Atom` - the initial load after the build process 
-may be a little slow because of the large number of Babel files that need to be transpiled. 
+Once you've installed or built Nuclide, just run `Atom` - the initial load after the build process
+may be a little slow because of the large number of Babel files that need to be transpiled.
 
 ## Installing Nuclide Server
 
-If you want to use Nuclide for remote development, you'll also need to setup the `nuclide-server` 
+If you want to use Nuclide for remote development, you'll also need to setup the `nuclide-server`
 package. Instructions can be found in the [Remote Development docs](docs/remote/).
