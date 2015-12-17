@@ -42,25 +42,22 @@ To benefit from all of Nuclide's features, we recommend you also install the fol
 
 If you want to build Nuclide from source, you must have the following tools installed:
 
-+ Python 2.6 or later.
-+ Atom 0.209.0 or later.
-+ Node 0.12.0 or later.
-+ `node`, `npm`, `apm`, and `git` must be on your `$PATH`.
++ Python 2.6 or later
++ Atom 1.0.0 or later
++ Node 0.12.0 or later
++ `node`, `npm`, `apm`, and `git` must be on your `$PATH`
 
-Building Nuclide is fairly straightforward, just run the following command from the root of the
-repository:
+1. Build and link the Nuclide package like you would other Atom packages:
 
-```bash
-./scripts/dev/setup
-```
-
-or, if you're using Windows:
-
-```bat
-python scripts\dev\setup
-```
-
-This script will fetch the appropriate dependencies from npm and perform any necessary build steps.
+        # Clone the source
+        git clone https://github.com/facebook/nuclide.git
+        cd nuclide
+        # Install dependencies
+        npm install
+        # Link the 'nuclide' package to Atom's package directory
+        apm link
+2. Now open Atom. Nuclide feature settings are listed in the 'nuclide' package in Atom's settings
+   view.
 
 ## Starting Nuclide
 
