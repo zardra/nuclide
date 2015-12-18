@@ -42,7 +42,6 @@ To benefit from all of Nuclide's features, we recommend you also install the fol
 
 If you want to build Nuclide from source, you must have the following tools installed:
 
-+ Python 2.6 or later
 + Atom 1.0.0 or later
 + Node 0.12.0 or later
 + `node`, `npm`, `apm`, and `git` must be on your `$PATH`
