@@ -17,3 +17,8 @@ a good place to ask questions, find answers, and report issues.
 ### Facebook Group
 
 <https://www.facebook.com/groups/nuclide/>
+
+### Uninstalling Nuclide
+
+To remove Nuclide and its dependencies, follow the
+[uninstall instructions](/docs/uninstall).
