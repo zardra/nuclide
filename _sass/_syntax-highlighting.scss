@@ -63,8 +63,7 @@
   .il    { color: #099 } // Literal.Number.Integer.Long
 }
 
-.highlight pre code,
-table.highlighttable {
+.highlight pre code {
   background: #f0f0f0;
   border-left: 4px solid $primary-bg;
   color: #000;
@@ -75,15 +74,6 @@ table.highlighttable {
   overflow-x: auto;
   padding: 12px;
   text-align: left;
-}
-
-.highlighttable {
-  display: block;
-  box-sizing: border-box;
-
-  .linenos .hljs {
-    padding: 0 1em 0 0;
-  }
 }
 
 code {
