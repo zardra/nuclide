@@ -16,7 +16,7 @@ Alternatively, if you are more comfortable using the command line,
 you can install it using `apm`:
 
 ```bash
-apm install nuclide-installer
+$ apm install nuclide-installer
 ```
 
 The first time you start Atom after installing the `nuclide-installer` package, you will have to wait
@@ -48,13 +48,15 @@ If you want to build Nuclide from source, you must have the following tools inst
 
 1. Build and link the Nuclide package like you would other Atom packages:
 
-        # Clone the source
-        git clone https://github.com/facebook/nuclide.git
-        cd nuclide
-        # Install dependencies
-        npm install
-        # Link the 'nuclide' package to Atom's package directory
-        apm link
+    ```bash
+    # Clone the source
+    $ git clone https://github.com/facebook/nuclide.git
+    $ cd nuclide
+    # Install dependencies
+    $ npm install
+    # Link the 'nuclide' package to Atom's package directory
+    $ apm link
+    ```
 2. Now open Atom. Nuclide feature settings are listed in the 'nuclide' package in Atom's settings
    view.
 
