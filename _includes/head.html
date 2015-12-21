@@ -17,7 +17,11 @@
 
   <base href="{{ site.url }}{{ site.baseurl }}/" />
 
-  <script src="http://fb.me/react-with-addons-0.13.1.min.js"></script>
+  {% comment %}
+  The file below is the redirect destination of 'http://fb.me/react-with-addons-0.13.1.min.js'. Use
+  the final destination to eliminate a redirect for clients.
+  {% endcomment %}
+  <script src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xaf1/t39.3284-6/11057093_524839387655092_169454193_n.js"></script>
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
