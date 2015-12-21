@@ -32,7 +32,7 @@
       {% endfor %}
     ];
   </script>
-  <script type="text/javascript">  
+  <script type="text/javascript">
     var Nav = React.createClass({displayName: "Nav",
       getInitialState: function() {
         return {
@@ -49,13 +49,11 @@
         this.setState({
           slideoutActive: false,
         });
-        document.dispatchEvent(event);
       },
       handleSlide: function(id) {
         this.setState({
           slideoutActive: !this.state.slideoutActive,
         });
-        document.dispatchEvent(event);
       },
       render: function() {
         var classes = React.addons.classSet({
@@ -67,12 +65,12 @@
           'slidingNavActive': this.state.slideoutActive,
         });
         return (
-          React.createElement("div", null, 
-            React.createElement("div", {className: classes, onClick: this.handleSlide}, 
-              React.createElement("i", {className: "fa fa-bars"})
-            ), 
-            React.createElement("nav", {className: navClasses}, 
-              React.createElement("ul", null, 
+          React.createElement("div", null,
+            React.createElement("div", {className: classes, onClick: this.handleSlide},
+              React.createElement("i", null, "☰")
+            ),
+            React.createElement("nav", {className: navClasses},
+              React.createElement("ul", null,
                 this.props.data.map(this.renderNavItems)
               )
             )
@@ -85,7 +83,7 @@
           'navItemActive': this.state.currentPath === child.href,
         });
         return (
-          React.createElement("li", {key: index, className: classes}, 
+          React.createElement("li", {key: index, className: classes},
             React.createElement("a", {onClick: this.handleClick, href: child.href}, child.text)
           )
         );

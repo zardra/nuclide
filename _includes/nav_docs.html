@@ -24,7 +24,7 @@
     {% endfor %}
   ];
 </script>
-<script type="text/javascript">  
+<script type="text/javascript">
   var DocNav = React.createClass({displayName: "DocNav",
     getInitialState: function() {
       return {
@@ -53,11 +53,11 @@
         'toggleNavActive': this.state.toggleActive,
       });
       return (
-        React.createElement("div", {className: navClasses}, 
-          React.createElement("section", null, 
+        React.createElement("div", {className: navClasses},
+          React.createElement("section", null,
             this.props.data.map(this.renderNavGroups)
-          ), 
-          React.createElement("div", {className: classes, onClick: this.handleSlide}, React.createElement("i", {className: "fa fa-chevron-circle-down"}))
+          ),
+          React.createElement("div", {className: classes, onClick: this.handleSlide}, React.createElement("i", null, this.state.toggleActive ? "◤" : "◢"))
         )
       );
     },
@@ -67,9 +67,9 @@
         'navGroupActive': this.props.currentGroup === child.group,
       });
       return (
-        React.createElement("div", {className: classes, key: index}, 
-          React.createElement("h3", null, child.group), 
-          React.createElement("ul", null, 
+        React.createElement("div", {className: classes, key: index},
+          React.createElement("h3", null, child.group),
+          React.createElement("ul", null,
             child.items.map(this.renderNavItems)
           )
         )

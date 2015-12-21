@@ -11,7 +11,7 @@
     {% endfor %}
   ];
 </script>
-<script type="text/javascript">  
+<script type="text/javascript">
 var BlogNav = React.createClass({displayName: "BlogNav",
   getInitialState: function() {
     return {
@@ -39,15 +39,17 @@ var BlogNav = React.createClass({displayName: "BlogNav",
       'toggleNavActive': this.state.toggleActive,
     });
     return (
-      React.createElement("div", {className: navClasses}, 
-        React.createElement("section", null, 
-          React.createElement("h3", null, "Recent Posts"), 
-          React.createElement("ul", null, 
-            this.props.data.map(this.renderNavItems), 
-            React.createElement("li", null, React.createElement("a", {href: "/blog/all.html"}, "All posts"))
+      React.createElement("div", {className: navClasses},
+        React.createElement("section", null,
+          React.createElement("h3", null, "Recent Posts"),
+          React.createElement("ul", null,
+            this.props.data.map(this.renderNavItems)
           )
-        ), 
-        React.createElement("div", {className: classes, onClick: this.handleSlide}, React.createElement("i", {className: "fa fa-chevron-circle-down"}))
+        ),
+        React.createElement("div",
+          {className: classes, onClick: this.handleSlide},
+          React.createElement("i", null, this.state.toggleActive ? "◤" : "◢")
+        )
       )
     );
   },
