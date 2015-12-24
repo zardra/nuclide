@@ -5,7 +5,7 @@ layout: docs
 permalink: /docs/remote/
 ---
 
-![Nuclide connecting to a remote server](static/images/docs/NuclideRemote.gif)
+![Nuclide connecting to a remote server](/static/images/docs/NuclideRemote.gif)
 
 Nuclide includes a `nuclide-server` package which creates the bridge between
 your local client version of Nuclide, and the development server that you want
@@ -93,11 +93,11 @@ npm clear cache
 To connect to your server, go to the Packages menu in Atom and select the
 'Connect...' option.
 
-![Connect menu](static/images/docs/connect_menu.png)
+![Connect menu](/static/images/docs/connect_menu.png)
 
 You'll see the following dialog:
 
-![Connect dialog](static/images/docs/connect.png)
+![Connect dialog](/static/images/docs/connect.png)
 
 Note that all of the values shown above are examples and will vary based on
 your own username, filesystem, and SSH and Nuclide configuration. The options
@@ -128,6 +128,6 @@ it is not yet running. The result will be that the root folder you just
 specified will appear in the left-hand tree view, underneath any local folders
 you might have had open:
 
-![Tree view](static/images/docs/tree_remote.png)
+![Tree view](/static/images/docs/tree_remote.png)
 
 You can now use this tree to open and edit files as you would expect.
