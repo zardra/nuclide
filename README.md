@@ -12,3 +12,4 @@
 4. Run Jekyll's server
 
         bundle exec jekyll serve
+5. The site will be served from http://localhost:4000
