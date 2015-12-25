@@ -6,12 +6,17 @@
     {
       key : "{{ site.baseurl }}{{ post.url }}",
       title : "{{ post.title }}",
-      url : "{{ site.baseurl }}{{ post.url }}",
-    }{% unless forloop.last %},{% endunless %}
+      url : "{{ site.baseurl }}{{ post.url }}"
+    },
     {% endfor %}
+    {
+      key : "all-posts",
+      title : "All Posts …",
+      url : "/blog/all.html",
+    }
   ];
 </script>
-<script type="text/javascript">
+<script>
 var BlogNav = React.createClass({displayName: "BlogNav",
   getInitialState: function() {
     return {
@@ -63,7 +68,9 @@ var BlogNav = React.createClass({displayName: "BlogNav",
       'navItemActive': this.props.currentDoc === child.title,
     });
     return (
-      React.createElement("li", {className: itemClasses, key: index}, React.createElement("a", {className: classes, href: child.url},  child.title))
+      React.createElement("li", {className: itemClasses, key: index},
+        React.createElement("a", {className: classes, href: child.url},  child.title)
+      )
     );
   },
 });
