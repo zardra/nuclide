@@ -68,4 +68,4 @@ may be a little slow because of the large number of Babel files that need to be 
 ## Installing Nuclide Server
 
 If you want to use Nuclide for remote development, you'll also need to setup the `nuclide-server`
-package. Instructions can be found in the [Remote Development docs](docs/remote/).
+package. Instructions can be found in the [Remote Development docs](/docs/remote/).
