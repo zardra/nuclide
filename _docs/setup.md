@@ -9,20 +9,15 @@ permalink: /docs/setup/
 
 The easiest way to get Nuclide is to install it from Atom itself.
 In Atom, open the **Settings** pane and navigate to the **Install** tab.
-From there, you can search for the `nuclide-installer` package and click
+From there, you can search for the `nuclide` package and click
 the corresponding **Install** button in the search result to install it.
 
 Alternatively, if you are more comfortable using the command line,
 you can install it using `apm`:
 
 ```bash
-$ apm install nuclide-installer
+$ apm install nuclide
 ```
-
-The first time you start Atom after installing the `nuclide-installer` package, you will have to wait
-a few seconds for the installer to determine which Nuclide packages it needs to install or update.
-To determine whether the installer worked, go to the **Settings** pane in Atom and navigate to the **Packages**
-tab. From there, filter your installed packages by `nuclide-` and you should see quite a few results!
 
 ### Recommended Dependencies
 
@@ -67,5 +62,5 @@ may be a little slow because of the large number of Babel files that need to be 
 
 ## Installing Nuclide Server
 
-If you want to use Nuclide for remote development, you'll also need to setup the `nuclide-server`
+If you want to use Nuclide for remote development, you'll also need to setup the NPM `nuclide`
 package. Instructions can be found in the [Remote Development docs](/docs/remote/).

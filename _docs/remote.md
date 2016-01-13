@@ -7,38 +7,41 @@ permalink: /docs/remote/
 
 ![Nuclide connecting to a remote server](/static/images/docs/NuclideRemote.gif)
 
-Nuclide includes a `nuclide-server` package which creates the bridge between
-your local client version of Nuclide, and the development server that you want
-to work on. It has its own setup process that is outlined below.
+Nuclide publishes the
+[`nuclide` NPM package](https://www.npmjs.com/package/nuclide), which creates
+the bridge between your local client version of Nuclide and the development
+machine on which you want to work. It has its own setup process that is outlined
+below.
 
 ## Nuclide Server Setup
 
-The following versions are required before installing the nuclide-server
-package:
+The following versions are required before installing the `nuclide` package:
 
 + Python 2.6 or later.
 + Node 0.12.0 or later.
 + `node`, and `npm` must be on your `$PATH`.
 + [Watchman](https://facebook.github.io/watchman). The Nuclide server
-requires Watchman to detect file and directory changes. You can build and/or
-install Watchman for your server's platform as described.
-[here](http://facebook.github.io/watchman/docs/install.html#build-install).
+requires Watchman to detect file and directory changes. Follow the Watchman
+[build or install instructions](http://facebook.github.io/watchman/docs/install.html#build-install)
+for your server's platform.
 + SSH Daemon - The Nuclide client connects to the server via SSH, so
 ensure that the server exposes an SSH daemon that you can connect to from your
-client machine, and that you know the credentials required - you will need to
+client machine, and that you know the credentials required. You will need to
 have an existing private key that can be used to connect to the server.
 + Port 9090-9093 exposed.  Note: you can specify another port in
-**Remote Server Command**. see "Connecting to your server from Nuclide" below.
+**Remote Server Command**. See
+["Connecting to your server from Nuclide"](#connecting-to-your-server-from-nuclide)
+below.
 
 ### Installing via NPM
 
-The easiest way to get nuclide-server is from NPM:
+The easiest way to get the Nuclide server is from NPM:
 
 ```bash
-npm install -g nuclide-server
+npm install -g nuclide
 ```
 
-We use the `-g` switch to ensure Nuclide is installed as a node global package.
+We use the `-g` switch to ensure Nuclide is installed as a Node global package.
 
 You do not need to explicitly start the server since the Nuclide client will
 attempt to do so when it first connects over SSH.
@@ -70,7 +73,7 @@ PATH=$PATH:$HOME/.npm_packages/bin; export PATH
 to the end of your .profile.  Now you should be able to run:
 
 ```bash
-npm install -g nuclide-server
+npm install -g nuclide
 ```
 
 without errors.
@@ -93,7 +96,7 @@ npm clear cache
 To connect to your server, go to the Packages menu in Atom and select the
 'Connect...' option.
 
-![Connect menu](/static/images/docs/connect_menu.png)
+![](/static/images/docs/connect_menu.png)
 
 You'll see the following dialog:
 
@@ -128,6 +131,6 @@ it is not yet running. The result will be that the root folder you just
 specified will appear in the left-hand tree view, underneath any local folders
 you might have had open:
 
-![Tree view](/static/images/docs/tree_remote.png)
+![](/static/images/docs/tree_remote.png)
 
 You can now use this tree to open and edit files as you would expect.
