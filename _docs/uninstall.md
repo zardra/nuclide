@@ -40,8 +40,11 @@ $ apm uninstall nuclide
 
 [Nuclide v0.0.35](https://github.com/facebook/nuclide/releases/tag/v0.0.35) and earlier was released
 as many separate Atom packages. If you have any packages starting with `nuclide-`, you likely have
-some part of <=v0.0.35 still installed. Run the uninstall command below, which contains the full
-list of Nuclide's packages when they were last released on 25 November 2015.
+some part of <=v0.0.35 still installed.
+
+Run the uninstall command below, which contains the full list of Nuclide's packages when they were
+last released on 25 November 2015. This is safe to run even if you only have a subset of the
+packages installed; `apm` will ignore any packages that are not present.
 
 ```bash
 $ apm uninstall \

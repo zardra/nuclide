@@ -8,16 +8,9 @@
       <nav class="navigation">
         <ul>
           {% for item in site.data.nav %}
-          {% comment %}
-            Render the nav element if (1) it's not the "Blog" link or (2) there's at least one post.
-            This prevents rendering the "Blog" nav if there aren't any blog posts. This check can be
-            removed as soon as there is one post.
-          {% endcomment %}
-          {% if item.category != 'blog' or site.posts.size > 0 %}
-          <li class="navItem {% if page.collection == item.category or page.category == item.category %}navItemActive{% endif %}">
-            <a href={{ item.href }}>{{ item.title }}</a>
-          </li>
-          {% endif %}
+            <li class="navItem {% if page.collection == item.category or page.category == item.category %}navItemActive{% endif %}">
+              <a href={{ item.href }}>{{ item.title }}</a>
+            </li>
           {% endfor %}
         </ul>
       </nav>
