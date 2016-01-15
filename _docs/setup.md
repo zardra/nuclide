@@ -55,12 +55,46 @@ If you want to build Nuclide from source, you must have the following tools inst
 2. Now open Atom. Nuclide feature settings are listed in the 'nuclide' package in Atom's settings
    view.
 
-## Starting Nuclide
-
-Once you've installed or built Nuclide, just run `Atom` - the initial load after the build process
-may be a little slow because of the large number of Babel files that need to be transpiled.
-
 ## Installing Nuclide Server
 
 If you want to use Nuclide for remote development, you'll also need to setup the NPM `nuclide`
 package. Instructions can be found in the [Remote Development docs](/docs/remote/).
+
+## Troubleshooting Installation
+
+### Incompatible native module error
+
+If you switch Atom versions, or if you `npm install nuclide` instead of `apm install nuclide`, you may find yourself with an "incompatible native module" error:
+
+!["incompatible native module" error](/static/images/incompatible-native-module-error.png)
+
+#### (easy) Fixing via the "Incompatible Packages" tool
+
+From the Command Palette, search for "Incompatible Packages: view", or
+click the "bug" icon in the status bar. Then select "Rebuild Packages", and restart Atom.
+
+_If you can't find "Incompatible Packages", make sure that the `incompatible-packages` package is enabled via `Settings` `->` `Packages`._
+
+![incompatible packages view](/static/images/incompatible-packages-view.png)
+
+#### (hard) Fixing via the CLI
+
+From the Atom Developer Tools, give the incompatible modules storage a kick:
+
+```js
+localStorage.removeItem(
+  atom.packages.getLoadedPackage('nuclide')
+    .getIncompatibleNativeModulesStorageKey()
+)
+```
+
+Then, from your terminal:
+
+```sh
+$ apm rebuild nuclide
+```
+
+## Starting Nuclide
+
+Once you've installed or built Nuclide, just run `Atom` - the initial load after the build process
+may be a little slow because of the large number of Babel files that need to be transpiled.
