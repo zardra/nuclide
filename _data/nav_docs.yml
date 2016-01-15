@@ -2,6 +2,7 @@
   items:
   - id: setup
   - id: shortcuts
+  - id: uninstall
 - title: Feature Guides
   items:
   - id: remote

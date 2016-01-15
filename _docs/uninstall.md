@@ -1,6 +1,6 @@
 ---
 id: uninstall
-title: Uninstalling Nuclide
+title: Uninstalling
 layout: docs
 permalink: /docs/uninstall/
 ---
@@ -35,6 +35,29 @@ If you only have the package named 'nuclide' installed, uninstall it with the fo
 ```bash
 $ apm uninstall nuclide
 ```
+
+#### Re-activate Disabled Core Packages
+
+Nuclide replaces Atom's 'tree-view' package in order to support remote file systems. When
+uninstalling Nuclide, you need to re-activate the 'tree-view' package yourself. The following are
+two ways to do that:
+
+* Re-activate through Atom's Settings page
+  1. Go to `Atom > Preferences > Packages > tree-view`
+  2. Click the "Enable" button
+    ![](/static/images/re-enable-atom-tree-view.png)
+
+* Edit your Atom 'config.cson' file
+  1. Open '~/.atom/config.cson'
+  2. Remove `"tree-view"` from the array of `disabledPackages` and save 'config.cson'
+
+    ```coffeescript
+    "*":
+      core:
+        disabledPackages: [
+          "tree-view" # REMOVE THIS LINE
+        ]
+    ```
 
 ### v0.0.35 and Prior
 
