@@ -1,4 +1,6 @@
-# nuclide.io
+# User Documentation for nuclide.io
+
+This directory will contain the user and feature documentation for Nuclide.
 
 ### Run the Site Locally
 
