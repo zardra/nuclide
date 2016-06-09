@@ -62,7 +62,7 @@ After attaching to the process by pressing `Attach`, you should see the debugger
 both the main Debugger and `Console` tabs.
 
 > The main debugging tab is titled `Sources`. However, since we don't display source code in this
-> tab, it is currently a misnomer. We may retitle this to `Debugger` in the future.
+> tab, it is currently a misnomer. We may retitle this to `Debugger` in the future.  
 
 ![](/static/images/docs/feature-debugger-basics-target-after-attach.png)
 

@@ -84,7 +84,7 @@ $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install git
 $ wget https://atom.io/download/deb
-$ mv deb atom-amd64.deb
+$ mv deb atom-amd64.deb  
 $ dpkg -i atom-amd64.deb
 # Run atom from the command line if you want
 $ atom
