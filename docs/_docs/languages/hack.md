@@ -1,5 +1,5 @@
 ---
-id: language-hack
+pageid: language-hack
 title: Hack
 layout: docs
 permalink: /docs/languages/hack/
@@ -210,7 +210,7 @@ separate pane. When debugging, HHVM will send its stdout to this window. This in
 
 ### Evaluation
 
-Basic [evaluation](/docs/features/debugger/#basics__evaluation) in the REPL works out of the box.  
+Basic [evaluation](/docs/features/debugger/#basics__evaluation) in the REPL works out of the box.
 You can also load bindings from your project so that you can interact with them in the console. To
 do this, make sure there is a `.hhconfig` file checked in at the root of your project, and also a
 `scripts/xdebug_includes.php` file.  `xdebug_includes.php` must contain at least one call to the
