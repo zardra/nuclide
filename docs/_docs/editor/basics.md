@@ -30,7 +30,7 @@ $ atom
 > Command Palette, search for "Window: Install Shell Commands".
 
 To open a specific directory into the
-[project explorer](/docs/editor/basics/#project-and-file-explorer), you can add a path argument to the `atom` command.
+[Project Explorer](/docs/editor/basics/#project-and-file-explorer), you can add a path argument to the `atom` command.
 
 ```bash
 $ atom /path/to/your/project/
@@ -43,31 +43,31 @@ By default, when you open Nuclide, the Home page appears.
 The Nuclide Home page gives you quick access to common Nuclide tools and features, as well as
 information regarding how to provide feedback.
 
-## Project and File Explorer
+## Project Explorer
 
-The project and file explorer is on the left side of Nuclide. This is where you can open
-projects, navigate through your project to open files in the [editing area](#editing-area),
-create new files and folders, etc.
+The Project Explorer is on the left side of Nuclide and contains two tabs: **File Tree** and **Source Control**. This is where you can open
+projects, navigate through your project to open files in the [Editing Area](#editing-area),
+create new files and folders, view source control information, etc.
 
 ### Adding Projects
 
 The first time you open Nuclide, there will be no projects or files open. Instead you will see two
-options in the project explorer: 1) **Add Project Folder**, which opens a local project, and 2) **Add Remote Project Folder**, which opens a project on a [remote machine](/docs/features/remote/).
+options in the Project Explorer's File Tree tab: 1) **Add Project Folder**, which opens a local project, and 2) **Add Remote Project Folder**, which opens a project on a [remote machine](/docs/features/remote/).
 
 ![](/static/images/docs/editor-basics-adding-projects.png)
 
 When you choose a project to open, you are choosing the root directory of that project. Upon
-opening, the file explorer turns into a file tree, with the top of tree as the root.
+opening, the project's file tree appears with the root folder at the top.
 
 ![](/static/images/docs/editor-basics-file-tree.png)
 
-To remove a project from the project explorer, *right-click* on the root, and choose
+To remove a project from the Project Explorer, *right-click* on the root folder, and choose
 **Remove Project Folder**.
 
 ### Multiple Projects
 
 You can have more than one project open at a time. To open a second project, *right-click* anywhere
-in the project explorer area, and choose **Add Project Folder** or **Add Remote Project Folder**.
+in the Project Explorer's File Tree area, and choose **Add Project Folder** or **Add Remote Project Folder**.
 
 > You can have both local and remote projects open at the same time.
 
@@ -79,10 +79,12 @@ However, features such as debugging and error checking will still occur by proje
 
 ### Changed Files
 
-If your project is under source control, the project explorer will highlight the files that have changed in
+If your project is under source control, the Project Explorer will highlight the files that have changed in
 your project since your last commit.
 
 ![](/static/images/docs/editor-basics-explorer-changed-files.png)
+
+The Project Explorer's Source Control tab will indicate if uncommitted changes exist or not. If you are working with a Mercurial repository, the branches are listed.
 
 ### Context-Aware Menu
 
@@ -94,9 +96,9 @@ Diff View (assuming you are working in a Mercurial repository), etc.
 
 ## Editing Area
 
-The editing area is the main area to edit your code and text files. Each file is represented by a
+The Editing Area is the main area for working with your code and text files. Each file is represented by a
 tab. You can split this area into various panes for easier modification of multiple files.
-The editing area is also where you will find specialized tabs for the Nuclide Home page,
+The Editing Area is also where you will find specialized tabs for the Nuclide Home page,
 the settings page, etc.
 
 ### File Navigation
@@ -126,7 +128,7 @@ provides a way to search, all at once, across your project, within your files, c
 
 ### Context-Aware Menu
 
-A context-aware menu appears when you *right-click* in the editing area. This menu provides
+A context-aware menu appears when you *right-click* in the Editing Area. This menu provides
 options such as adding and closing panes, setting and removing breakpoints, showing line-by-line
 blame (if that information is available), etc.
 
@@ -195,8 +197,7 @@ Nuclide has its own set of customizable preferences and settings.
 You get to these preferences by opening the Atom Settings view via the `Cmd-,` keyboard shortcut
 (`Ctrl-,` on Linux) or through the `Packages | Settings View | Open` menu option.
 
-A new tab opens in the [editing area](/docs/editor/basics/#editing-area) titled **Settings**. Select **Packages** from the list at the left of the Settings tab, and scroll down until you see `nuclide` under either
-**Community Packages** or **Development Packages**.
+A new tab opens in the [Editing Area](/docs/editor/basics/#editing-area) titled **Settings**. Select **Packages** from the list at the left of the Settings tab, and scroll down until you see `nuclide` under either **Community Packages** or **Development Packages**.
 
 ![](/static/images/docs/editor-basics-nuclide-package.png)
 
