@@ -42,7 +42,7 @@ Hack's integration into Nuclide provides you with productivity features such as:
 * [Code Diagnostics](#features__code-diagnostics)
 * [Autocomplete](#features__autocomplete)
 * [Jump to Definition](#features__jump-to-definition)
-* [Inline (mouse over) typehinting](#features__type-hinting)
+* [Inline (mouse over) type hinting](#features__type-hinting)
 * [Code formatting](#features__code-formatting)
 * [Omnisearch](/docs/features/quick-open), with a special [Hack symbol](/docs/features/quick-open#hack-symbols) search pane.
 
@@ -95,7 +95,7 @@ when hovering over a variable to pin it.
 The highlighted variables show that their type variables have been pinned. If you hover over the
 type hint, its associated variable will have motion in its highlight.
 
-Click the `x` to remove the pinned type hint.
+Click the `x` at the right end of a pinned type hint to remove it.
 
 > Pinned type hints can be moved anywhere within the editor.
 
@@ -108,15 +108,13 @@ For example, here is a bit of code that looks relatively haphazard from a format
 
 ![](/static/images/docs/language-hack-badly-formatted.png)
 
-If your cursor is inside the function and you `cmd-shift-C` (`ctrl-shift-C` on Linux), your will be
-formatted.
+Place your cursor inside the function and press `Cmd-Shift-C` (`Ctrl-Shift-C` on Linux) to apply the coding standards to the function.
 
 ![](/static/images/docs/language-hack-well-formatted.png)
 
 ## Debugging
 
-Nuclide has support for debugging PHP and Hack projects.
-[HHVM](https://docs.hhvm.com/hhvm/installation/introduction) is required for debugging
+Nuclide has support for debugging PHP and Hack projects. [HHVM](https://docs.hhvm.com/hhvm/installation/introduction) is required for debugging
 Hack and PHP code.
 
 > Theoretically, PHP debugging should work on other XDebug-compatible runtimes like Zend, but we
@@ -126,7 +124,7 @@ Hack and PHP code.
 
 ### XDebug
 
-In order for the Nuclide debugger to attach properly to the HHVM process, you must enable
+In order for the [Nuclide Debugger](/docs/features/debugger) to attach properly to the HHVM process, you must enable
 [XDebug](https://xdebug.org/) in your HHVM configuration.
 
 > Your remote server may already have the appropriate settings so that this step is not necessary.
@@ -144,16 +142,16 @@ xdebug.remote_port = 9000
 ```
 
 > In the Nuclide Settings, there is an option to specify the remote port as well. If you specify
-> the port in an ini file via `xdebug.remote_port`, make sure that setting matches what is in the
+> the port in an `.ini` file via `xdebug.remote_port`, make sure it matches what is in the
 > Nuclide setting.
 
 ### Debugging: HHVM Toolbar
 
 Nuclide provides an HHVM toolbar. You can launch the toolbar from the
 [Nuclide toolbar](/docs/features/toolbar/#buttons) or from the
-[command-palette](/docs/editor/basics/#command-palette) with `Nuclide HHVM Toolbar: Toggle`.
+[Command Palette](/docs/editor/basics/#command-palette) with `Nuclide HHVM Toolbar: Toggle`.
 
-> You have to have a Hack or PHP file open to successfully launch the toolbar.
+> You must have a Hack or PHP file open to successfully launch the toolbar.
 
 ![](/static/images/docs/feature-debugger-languages-hack-php-hhvm-toolbar.png)
 
@@ -163,8 +161,8 @@ Now you can choose between debugging a webserver or a script.
 
 Set [breakpoints](/docs/features/debugger/#basics__breakpoints) in your code.
 
-Once you decide the type of debugging you plan to do, click `Attach`. This will bring up the
-debugger UI and stop at the first breakpoint you set.
+Once you decide the type of debugging you plan to do, click **Attach**. This will bring up the
+Debugger UI and stop at the first breakpoint you set.
 
 You can then follow the [basic debugging information](/docs/features/debugger/#basics) provided
 above and use the additional features of the Output Window, Evaluation and other HHVM-specific
@@ -176,41 +174,42 @@ Here is an example of debugging a running HHVM server:
 
 In both the script and server launching/attaching scenarios, the line at which you've set a
 breakpoint will highlight in blue when the breakpoint is hit. When this happens, execution of your
-code is paused and you can use the debugger to step, evaluate expressions, inspect the current
-callstack, etc.
+code is paused and you can use the Debugger to step, evaluate expressions, inspect the current
+call stack, etc.
 
 ### Debugging: Command-Line
 
 You can also debug without using the HHVM Toolbar by debugging directly from the command-line.
 
-1. Have a PHP or Hack file active in the [editing area](/docs/editor/basics/#editing-area).
-2. `cmd-shift-Y` to bring up the process attachment UI.
-3. Choose the remote server that has your project and HHVM installed from the attachment UI.
+1. Have a PHP or Hack file active in the [Editing Area](/docs/editor/basics/#editing-area).
+2. Press `Cmd-Shift-Y` to bring up the Attach to Process UI.
+3. Choose the remote server that has your project and HHVM installed from the Attach to Process UI.
 It should look similar to:
 
     ![](/static/images/docs/feature-debugger-languages-hack-php-attach.png)
 
-4. Click `Attach`.
+4. Click **Attach**.
 5. Set [breakpoints](/docs/features/debugger/#basics__breakpoints) in your code.
 6. Run your PHP/Hack script or server
     1. If you are running a script: `hhvm -c xdebug.ini your-script.php`
     2. If you are running a server: `hhvm -c xdebug.ini -m server`
 7. Start Debugging.
-    1. If you are debugging a server, you will need to send a request to that server in order for
+
+*Note:* If you are debugging a server, you will need to send a request to that server in order for
     the server breakpoint to be hit.
 
 ### Output Window
 
-When you launch the debugger for Hack and PHP, an `Output` window will appear in a tab in a
+When you launch the Debugger for Hack and PHP, an `Output` window will appear in a tab in a
 separate pane. When debugging, HHVM will send its stdout to this window. This includes output from
-`print()` (or similar) statements and stacktraces.
+`print()` (or similar) statements and stack traces.
 
 ### Evaluation
 
 Basic [evaluation](/docs/features/debugger/#basics__evaluation) in the REPL works out of the box.  
 You can also load bindings from your project so that you can interact with them in the console. To
-do this, make sure there is a `.hhconfig` file checked in at the root of your project, and also a
-`scripts/xdebug_includes.php` file.  `xdebug_includes.php` must contain at least one call to the
+do this, make sure there is a `.hhconfig` file checked in at the root of your project, as well as a
+`scripts/xdebug_includes.php` file.  The `xdebug_includes.php` file must contain at least one call to the
 `xdebug_break` function.  Here is an example of such a file:
 
 ```php
@@ -224,21 +223,20 @@ do this, make sure there is a `.hhconfig` file checked in at the root of your pr
 xdebug_break(); // Pauses the runtime's execution when xdebug mode is enabled.
 ```
 
-Now when you debug your Hack or PHP project, the nuclide debugger will also make a separate
+Now when you debug your Hack or PHP project, the Nuclide Debugger will also make a separate
 connection to the runtime and launch this script.  Any context loaded before calling
 `xdebug_break()` will be accessible via the REPL.
 
 ### Filtering
 
-After you attach to a remote server with HHVM, the debugger will then utilize the *first* instance
+After you attach to a remote server with HHVM, the Debugger will utilize the *first* instance
 of HHVM that is run with the correct `.ini` configuration, etc. If you are running multiple
-instances of HHVM with that configuration, you might start debugging on code on which you did not
-intend.
+instances of HHVM with that configuration, you might start debugging different code unintentionally.
 
 Nuclide provides a mechanism to filter out the proper, intended script. For example, if you know
 the script name that will be debugged, then use that as the filter.
 
-Go to `Settings | Packages | Nuclide | Settings` and look for:
+Go to `Settings | Packages | Nuclide | Settings` and look for `nuclide-debugger-hhvm: Script Path Filter Regexp`.
 
 ![](/static/images/docs/feature-debugger-languages-hack-php-filtering.png)
 
@@ -246,7 +244,7 @@ Go to `Settings | Packages | Nuclide | Settings` and look for:
 
 There are other Hack and PHP debug settings that can be set as they pertain to HHVM. These include:
 
-- Filtering debugging connections by user name (`idekey`). By default, this is set to the user that started the HHVM process (can override with `xdebug.idekey` in a `.ini` file).
+- Filtering debugging connections by user name (`idekey`). By default, this is set to the user that started the HHVM process (you can override this with `xdebug.idekey` in an `.ini` file).
 - HHVM logging level. The default is `INFO`.
 - Debugging Port. The default is `9000`. If you override this is in an `.ini` file, ensure that your setting matches this setting.
 
