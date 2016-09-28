@@ -10,7 +10,7 @@ Nuclide has been built from the start to provide a great IDE experience for
 [HHVM](http://hhvm.com).
 
 > Currently, HHVM is [not supported on Windows](https://docs.hhvm.com/hhvm/installation/windows), so
-> this integration has limited viablity on that platform. However,
+> this integration has limited viability on that platform. However,
 > [work is being done](https://github.com/facebook/hhvm/issues/5460) to port HHVM to Windows.
 
 <br/>
@@ -25,10 +25,10 @@ system:
 
 1. [Install HHVM](https://docs.hhvm.com/hhvm/installation/introduction). By default, Hack is
 installed with HHVM.
-2. If you are new to Hack, you can [follow the steps for writing your first Hack program](https://docs.hhvm.com/hack/getting-started/getting-started#your-first-hack-program). The
+2. If you are new to Hack, the [Getting Started](https://docs.hhvm.com/hack/getting-started/getting-started) document provides [steps for writing your first Hack program](https://docs.hhvm.com/hack/getting-started/getting-started#your-first-hack-program). The
 key items of note are:
-    * The typechecker `hh_client` is on your `$PATH` (if you did the default install of
-      HHVM, then it should be there by default).
+    * The typechecker `hh_client` is in your `$PATH` environment variable (the default install of
+      HHVM, should place it there).
     * You have an `.hhconfig` file at the root of your project.
     * You have `<?hh` at the top of your `.php` or `.hh` file.
 
@@ -44,16 +44,13 @@ Hack's integration into Nuclide provides you with productivity features such as:
 * [Jump to Definition](#features__jump-to-definition)
 * [Inline (mouse over) typehinting](#features__type-hinting)
 * [Code formatting](#features__code-formatting)
-* [Omnisearch](/docs/features/quick-open), with a special
-* [Hack symbol](/docs/features/quick-open#hack-symbols) search pane.
+* [Omnisearch](/docs/features/quick-open), with a special [Hack symbol](/docs/features/quick-open#hack-symbols) search pane.
 
 ### Code Diagnostics
 
-If you write code that will not correctly
-[typecheck](https://docs.hhvm.com/hack/typechecker/introduction), Nuclide has code diagnostics that
-will show you the error. You can see the error in two places, inline within the
-[main text editor](/docs/editor/basics/#editing-area) and in the
-[code diagnostics](/docs/editor/basics/#status-bar__code-diagnostics) pane.
+If your code doesn't correctly [typecheck](https://docs.hhvm.com/hack/typechecker/introduction), Nuclide has code diagnostics that will show you the error. You can see the error in two places, inline within the
+[Editing Area](/docs/editor/basics/#editing-area) and in the
+[Code Diagnostics](/docs/editor/basics/#status-bar__code-diagnostics) pane below.
 
 ![](/static/images/docs/language-hack-code-diagnostics.png)
 
@@ -76,8 +73,8 @@ Nuclide provides a jump to definition/symbol feature for Hack programs.
 > In order for this to work, you must have a `.hhconfig` file in the root of your project and a
 > running `hh_server` monitoring the root as well.
 
-For example, if you want to go to the definition of `getPages()`, you will hover over `getPages()`
-and either press `cmd-<mouse click>` or `cmd-option-Enter` (`ctrl-alt-Enter` on Linux).
+For example, if you want to go to the definition of `getPages()`, hover over `getPages()`
+and either press `Cmd-<mouse click>` or `Cmd-Option-Enter` (`Ctrl-Alt-Enter` on Linux).
 
 ![](/static/images/docs/language-hack-jump-to-definition-link.png)
 
@@ -90,8 +87,8 @@ inline.
 
 ![](/static/images/docs/language-hack-typehint.png)
 
-In fact, you can even pin that type hint so that it always shows as well. Just click on the pin
-when hovering over a variable and it will be pinned.
+In fact, you can even pin that type hint so that it always displays. Just click on the pin icon
+when hovering over a variable to pin it.
 
 ![](/static/images/docs/language-hack-pinned-typehint.png)
 
