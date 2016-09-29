@@ -25,7 +25,7 @@ system:
 
 1. [Install HHVM](https://docs.hhvm.com/hhvm/installation/introduction). By default, Hack is
 installed with HHVM.
-2. If you are new to Hack, the [Getting Started](https://docs.hhvm.com/hack/getting-started/getting-started) document provides [steps for writing your first Hack program](https://docs.hhvm.com/hack/getting-started/getting-started#your-first-hack-program). The
+2. If you are new to Hack, [Getting Started](https://docs.hhvm.com/hack/getting-started/getting-started) provides [steps for writing your first Hack program](https://docs.hhvm.com/hack/getting-started/getting-started#your-first-hack-program). The
 key items of note are:
     * The typechecker `hh_client` is in your `$PATH` environment variable (the default install of
       HHVM, should place it there).
@@ -42,9 +42,9 @@ Hack's integration into Nuclide provides you with productivity features such as:
 * [Code Diagnostics](#features__code-diagnostics)
 * [Autocomplete](#features__autocomplete)
 * [Jump to Definition](#features__jump-to-definition)
-* [Inline (mouse over) type hinting](#features__type-hinting)
+* [Inline (mouseover) type hinting](#features__type-hinting)
 * [Code formatting](#features__code-formatting)
-* [Omnisearch](/docs/features/quick-open), with a special [Hack symbol](/docs/features/quick-open#hack-symbols) search pane.
+* [OmniSearch](/docs/features/quick-open), with a special [Hack symbol](/docs/features/quick-open#hack-symbols) search pane.
 
 ### Code Diagnostics
 
@@ -70,7 +70,7 @@ types provided by Hack, autocomplete just works.
 
 Nuclide provides a jump to definition/symbol feature for Hack programs.
 
-> In order for this to work, you must have a `.hhconfig` file in the root of your project and a
+> In order for this to work, you must have an `.hhconfig` file in the root of your project and a
 > running `hh_server` monitoring the root as well.
 
 For example, if you want to go to the definition of `getPages()`, hover over `getPages()`
@@ -95,7 +95,7 @@ when hovering over a variable to pin it.
 The highlighted variables show that their type variables have been pinned. If you hover over the
 type hint, its associated variable will have motion in its highlight.
 
-Click the `x` at the right end of a pinned type hint to remove it.
+Click the `x` icon of a pinned type hint to remove it.
 
 > Pinned type hints can be moved anywhere within the editor.
 
@@ -114,8 +114,7 @@ Place your cursor inside the function and press `Cmd-Shift-C` (`Ctrl-Shift-C` on
 
 ## Debugging
 
-Nuclide has support for debugging PHP and Hack projects. [HHVM](https://docs.hhvm.com/hhvm/installation/introduction) is required for debugging
-Hack and PHP code.
+Nuclide has support for debugging PHP and Hack projects. [HHVM](https://docs.hhvm.com/hhvm/installation/introduction) is required for debugging Hack and PHP code.
 
 > Theoretically, PHP debugging should work on other XDebug-compatible runtimes like Zend, but we
 > have only tested this with HHVM.
@@ -128,6 +127,7 @@ In order for the [Nuclide Debugger](/docs/features/debugger) to attach properly 
 [XDebug](https://xdebug.org/) in your HHVM configuration.
 
 > Your remote server may already have the appropriate settings so that this step is not necessary.
+<!-- BUT WHAT IF IT DOESN'T? IS THERE A WAY TO VERIFY?-->
 
 You do this by specifying [XDebug configuration](https://xdebug.org/docs/all_settings) information
 in a `.ini` file that will be passed to the HHVM executable. Here is an example `.ini` file that can
@@ -142,7 +142,7 @@ xdebug.remote_port = 9000
 ```
 
 > In the Nuclide Settings, there is an option to specify the remote port as well. If you specify
-> the port in an `.ini` file via `xdebug.remote_port`, make sure it matches what is in the
+> the port in an `.ini` file with `xdebug.remote_port`, make sure it matches what is in the
 > Nuclide setting.
 
 ### Debugging: HHVM Toolbar
@@ -155,13 +155,13 @@ Nuclide provides an HHVM toolbar. You can launch the toolbar from the
 
 ![](/static/images/docs/feature-debugger-languages-hack-php-hhvm-toolbar.png)
 
-Now you can choose between debugging a webserver or a script.
+You can choose between debugging a webserver or a script.
 
 ![](/static/images/docs/feature-debugger-languages-hack-php-hhvm-toolbar-webserver-script.png)
 
 Set [breakpoints](/docs/features/debugger/#basics__breakpoints) in your code.
 
-Once you decide the type of debugging you plan to do, click **Attach**. This will bring up the
+Once you decide the type of debugging you plan to do, click **Attach**/**Launch**. This will bring up the
 Debugger UI and stop at the first breakpoint you set.
 
 You can then follow the [basic debugging information](/docs/features/debugger/#basics) provided
