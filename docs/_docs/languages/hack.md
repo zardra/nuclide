@@ -200,13 +200,16 @@ It should look similar to:
 
 ### Output Window
 
-When you launch the Debugger for Hack and PHP, an `Output` window will appear in a tab in a
-separate pane. When debugging, HHVM will send its stdout to this window. This includes output from
-`print()` (or similar) statements and stack traces.
+When you launch the Debugger for Hack and PHP, an output window will appear in the **Console** tab of the Debugger UI to the right of the [Editing Area](/docs/editor/basics/#editing-area). If you wish to see both the **Sources** tab and the Console output simultaneously, click on the list icon in the upper right corner of the Debugger UI to open a drawer at the bottom displaying tabs for **Console**, **Search**, **Emulation**, and **Rendering**.
+
+>When you select the top **Console** tab the bottom Console area will become grayed out.
+
+When debugging, HHVM will send its stdout to one of these Consoles. This includes output from `print()` (or similar) statements and stack traces.
 
 ### Evaluation
 
-Basic [evaluation](/docs/features/debugger/#basics__evaluation) in the REPL works out of the box.  
+Basic [evaluation](/docs/features/debugger/#basics__evaluation) in the REPL works out of the box.
+
 You can also load bindings from your project so that you can interact with them in the console. To
 do this, make sure there is a `.hhconfig` file checked in at the root of your project, as well as a
 `scripts/xdebug_includes.php` file.  The `xdebug_includes.php` file must contain at least one call to the
