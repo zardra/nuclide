@@ -6,7 +6,7 @@ permalink: /docs/features/debugger/
 ---
 
 One of the key features of Nuclide is its multiple-language debugging support. The Nuclide Debugger
-is provided within the familiar [Chrome DevTools](https://developer.chrome.com/devtools) interface.
+is provided with the familiar [Chrome DevTools](https://developer.chrome.com/devtools) interface.
 
 The Nuclide Debugger provides many capabilities allowing you to have a productive debug loop,
 including inspection, watches, setting breakpoints, step in/over/out, etc.
@@ -18,19 +18,18 @@ including inspection, watches, setting breakpoints, step in/over/out, etc.
 
 In general, the Debugger is instantiated via `Cmd-Shift-Y` (`Ctrl-Shift-Y` on Linux). You can also
 toggle the Debugger through the [Command Palette](/docs/editor/basics/#command-palette) and the
-Nuclide toolbar.
+[Nuclide toolbar](/docs/features/toolbar/#buttons)'s **Toggle Debugger** icon.
 
 ## Basics
 
 Nuclide supports debugging for multiple [languages](#language-specific-debugging) and
-[platforms](#platform-specific-debugging).
-However, there are some basic debugging concepts that apply across all languages. Debugging a Node
+[platforms](#platform-specific-debugging). However, there are some basic debugging concepts that apply across all languages. Debugging a Node
 project will be used to help illustrate the points described here.
 
 ### Debuggable Target
 
 Specific details are provided for each [language](#language-specific-debugging) or
-[platform](#platform-specific-debugging), but, in general, to begin debugging code in Nuclide, you
+[platform](#platform-specific-debugging), but in general, to begin debugging code in Nuclide, you
 need to either launch a debug process from within Nuclide (e.g., iOS from the Buck toolbar) or
 attach to a currently running process (e.g., `node`) for debugging.
 
