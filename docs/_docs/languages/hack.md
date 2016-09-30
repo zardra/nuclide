@@ -126,11 +126,10 @@ Nuclide has support for debugging PHP and Hack projects. [HHVM](https://docs.hhv
 In order for the [Nuclide Debugger](/docs/features/debugger) to attach properly to the HHVM process, you must enable
 [XDebug](https://xdebug.org/) in your HHVM configuration.
 
-> Your remote server may already have the appropriate settings so that this step is not necessary.
-<!-- BUT WHAT IF IT DOESN'T? IS THERE A WAY TO VERIFY?-->
+> Your remote server may already have the appropriate settings, if so, this step is not necessary.
 
 You do this by specifying [XDebug configuration](https://xdebug.org/docs/all_settings) information
-in a `.ini` file that will be passed to the HHVM executable. Here is an example `.ini` file that can
+in a `.ini` file that will be passed to the HHVM executable. Here is an example `xdebug.ini` file that can
 be used:
 
 ```bash
@@ -143,7 +142,17 @@ xdebug.remote_port = 9000
 
 > In the Nuclide Settings, there is an option to specify the remote port as well. If you specify
 > the port in an `.ini` file with `xdebug.remote_port`, make sure it matches what is in the
-> Nuclide setting.
+> Nuclide DBGP Attach Port and/or DBGP Launch Port settings found under `nuclide-debugger-php`.
+
+Make sure the **Arguments for your PHP runtime** setting points to your `.ini` file.
+
+***Example***
+
+```bash
+-c /root/docker-shared/code/xdebug.ini
+```
+
+The **Path to your PHP runtime** setting should indicate the location of HHVM on your server, such as `/usr/bin/hhvm`.
 
 <!-- HHVM TOOLBAR WILL BE MOVING INTO TASK RUNNER -->
 <!-- ### Debugging: HHVM Toolbar
