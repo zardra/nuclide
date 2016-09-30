@@ -25,7 +25,7 @@ system:
 
 1. [Install HHVM](https://docs.hhvm.com/hhvm/installation/introduction). By default, Hack is
 installed with HHVM.
-2. If you are new to Hack, [Getting Started](https://docs.hhvm.com/hack/getting-started/getting-started) provides [steps for writing your first Hack program](https://docs.hhvm.com/hack/getting-started/getting-started#your-first-hack-program). The
+2. If you are new to Hack, HHVM's [Getting Started](https://docs.hhvm.com/hack/getting-started/getting-started) provides [steps for writing your first Hack program](https://docs.hhvm.com/hack/getting-started/getting-started#your-first-hack-program). The
 key items of note are:
     * The typechecker `hh_client` is in your `$PATH` environment variable (the default install of
       HHVM, should place it there).
@@ -145,7 +145,8 @@ xdebug.remote_port = 9000
 > the port in an `.ini` file with `xdebug.remote_port`, make sure it matches what is in the
 > Nuclide setting.
 
-### Debugging: HHVM Toolbar
+<!-- HHVM TOOLBAR WILL BE MOVING INTO TASK RUNNER -->
+<!-- ### Debugging: HHVM Toolbar
 
 Nuclide provides an HHVM toolbar. You can launch the toolbar from the
 [Nuclide toolbar](/docs/features/toolbar/#buttons) or from the
@@ -175,36 +176,34 @@ Here is an example of debugging a running HHVM server:
 In both the script and server launching/attaching scenarios, the line at which you've set a
 breakpoint will highlight in blue when the breakpoint is hit. When this happens, execution of your
 code is paused and you can use the Debugger to step, evaluate expressions, inspect the current
-call stack, etc.
+call stack, etc. -->
+
+<!-- NEED SCREENSHOTS OF NEW DEBUGGER PROCESS/UI -->
 
 ### Debugging: Command-Line
-
-You can also debug without using the HHVM Toolbar by debugging directly from the command-line.
+<!-- NEED TO VERIFY THIS SECTION IS CORRECT. DOES THE HHVM TOOLBAR TO TASK RUNNER CHANGE AFFECT THIS? -->
+You can also debug directly from the command-line.
 
 1. Have a PHP or Hack file active in the [Editing Area](/docs/editor/basics/#editing-area).
-2. Press `Cmd-Shift-Y` to bring up the Attach to Process UI.
-3. Choose the remote server that has your project and HHVM installed from the Attach to Process UI.
-It should look similar to:
+2. Click on the **Toggle Debugger** icon in the [Nuclide toolbar](/docs/features/toolbar/#buttons) or press `Cmd-Shift-Y` to bring up the Debugger Selection window.
+3. Select the remote server where your project is located from the **Connection** drop-down menu. It should default to the remote location of the PHP or Hack file you have open.
+4. Select the file's type from the **Type** drop-down menu.  For either PHP or Hack, choose **PHP**.
+5. Select **Attach** from the **Action** drop-down menu.
 
-    ![](/static/images/docs/feature-debugger-languages-hack-php-attach.png)
+    ![](/static/images/docs/feature-debugger-selection-attach-server.png)
 
-4. Click **Attach**.
-5. Set [breakpoints](/docs/features/debugger/#basics__breakpoints) in your code.
-6. Run your PHP/Hack script or server
+6. Set [breakpoints](/docs/features/debugger/#basics__breakpoints) in your code.
+7. Run your PHP/Hack script or server
     1. If you are running a script: `hhvm -c xdebug.ini your-script.php`
     2. If you are running a server: `hhvm -c xdebug.ini -m server`
-7. Start Debugging.
+8. Start Debugging.
 
 *Note:* If you are debugging a server, you will need to send a request to that server in order for
     the server breakpoint to be hit.
 
 ### Output Window
 
-When you launch the Debugger for Hack and PHP, an output window will appear in the **Console** tab of the Debugger UI to the right of the [Editing Area](/docs/editor/basics/#editing-area). If you wish to see both the **Sources** tab and the Console output simultaneously, click on the list icon in the upper right corner of the Debugger UI to open a drawer at the bottom displaying tabs for **Console**, **Search**, **Emulation**, and **Rendering**.
-
->When you select the top **Console** tab the bottom Console area will become grayed out.
-
-When debugging, HHVM will send its stdout to one of these Consoles. This includes output from `print()` (or similar) statements and stack traces.
+While debugging, HHVM will send its stdout to the Console below the Editing Area. This also includes output from `print()` (or similar) statements and stack traces.
 
 ### Evaluation
 
@@ -223,7 +222,7 @@ do this, make sure there is a `.hhconfig` file checked in at the root of your pr
 // Put code here that loads context into the environment.  For example, you can use PHP's require to
 // import function and variable bindings, which will then be available via the REPL.
 
-xdebug_break(); // Pauses the runtime's execution when xdebug mode is enabled.
+xdebug_break(); // Pauses the runtime's execution when XDebug mode is enabled.
 ```
 
 Now when you debug your Hack or PHP project, the Nuclide Debugger will also make a separate
