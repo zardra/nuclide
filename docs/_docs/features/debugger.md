@@ -117,7 +117,7 @@ The **Locals** area shows you information about local variables based upon the c
 
 ***Watch Expressions***
 
-The **Watch Expressions** area is for you to keep track of the values of global and local variables. To add a new value to track, enter it in the **add new watch expression** text box. To remove a watched variable, click the `x` icon of the variable you wish to delete.
+The **Watch Expressions** area is for you to keep track of the values of global and local variables. To add a new value to track, enter it in the`add new watch expression` text box. To remove a watched variable, click the `x` icon of the variable you wish to delete.
 
 ***Detaching***
 
