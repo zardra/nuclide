@@ -114,21 +114,21 @@ Place your cursor inside the function and press `Cmd-Shift-C` (`Ctrl-Shift-C` on
 
 ## Debugging
 
-Nuclide has support for debugging PHP and Hack projects. [HHVM](https://docs.hhvm.com/hhvm/installation/introduction) is required for debugging Hack and PHP code.
+Nuclide has support for debugging PHP and Hack projects. [HHVM](https://docs.hhvm.com/hhvm/installation/introduction) is recommended for debugging Hack and PHP code.
 
 > Theoretically, PHP debugging should work on other XDebug-compatible runtimes like Zend, but we
 > have only tested this with HHVM.
 
 > Currently, we only support debugging [remote](/docs/features/remote/) projects.
 
-### XDebug
+### Xdebug
 
 In order for the [Nuclide Debugger](/docs/features/debugger) to attach properly to the HHVM process, you must enable
-[XDebug](https://xdebug.org/) in your HHVM configuration.
+[Xdebug](https://xdebug.org/) in your HHVM configuration.
 
 > Your remote server may already have the appropriate settings, if so, this step is not necessary.
 
-You do this by specifying [XDebug configuration](https://xdebug.org/docs/all_settings) information
+You do this by specifying [Xdebug configuration](https://xdebug.org/docs/all_settings) information
 in a `.ini` file that will be passed to the HHVM executable. Here is an example `xdebug.ini` file that can
 be used:
 
@@ -142,7 +142,7 @@ xdebug.remote_port = 9000
 
 > In the Nuclide Settings, there is an option to specify the remote port as well. If you specify
 > the port in an `.ini` file with `xdebug.remote_port`, make sure it matches what is in the
-> Nuclide DBGP Attach Port and/or DBGP Launch Port settings found under `nuclide-debugger-php`.
+> Nuclide port setting found under `nuclide-debugger-php`.
 
 Make sure the **Arguments for your PHP runtime** setting points to your `.ini` file.
 
@@ -154,11 +154,10 @@ Make sure the **Arguments for your PHP runtime** setting points to your `.ini` f
 
 The **Path to your PHP runtime** setting should indicate the location of HHVM on your server, such as `/usr/bin/hhvm`.
 
-<!-- HHVM TOOLBAR WILL BE MOVING INTO TASK RUNNER -->
-<!-- ### Debugging: HHVM Toolbar
 
-Nuclide provides an HHVM toolbar. You can launch the toolbar from the
-[Nuclide toolbar](/docs/features/toolbar/#buttons) or from the
+### Debugging: HHVM Toolbar
+
+Nuclide provides an HHVM toolbar. You can launch the toolbar from the [Nuclide toolbar](/docs/features/toolbar/#buttons) or from the
 [Command Palette](/docs/editor/basics/#command-palette) with `Nuclide HHVM Toolbar: Toggle`.
 
 > You must have a Hack or PHP file open to successfully launch the toolbar.
@@ -171,30 +170,26 @@ You can choose between debugging a webserver or a script.
 
 Set [breakpoints](/docs/features/debugger/#basics__breakpoints) in your code.
 
-Once you decide the type of debugging you plan to do, click **Attach**/**Launch**. This will bring up the
-Debugger UI and stop at the first breakpoint you set.
+Once you decide the type of debugging you plan to do, click **Attach** (webserver) or **Launch** (script). This opens the
+Debugger Controls and stops at the first breakpoint.
 
 You can then follow the [basic debugging information](/docs/features/debugger/#basics) provided
 above and use the additional features of the Output Window, Evaluation and other HHVM-specific
 debugging settings as described below to debug your code.
 
-Here is an example of debugging a running HHVM server:
-
-![](/static/images/docs/feature-debugger-languages-hack-php-server-debugging.png)
+![](/static/images/docs/feature-debugger-languages-hack-debugging.png)
 
 In both the script and server launching/attaching scenarios, the line at which you've set a
 breakpoint will highlight in blue when the breakpoint is hit. When this happens, execution of your
-code is paused and you can use the Debugger to step, evaluate expressions, inspect the current
-call stack, etc. -->
-
-<!-- NEED SCREENSHOTS OF NEW DEBUGGER PROCESS/UI -->
+code is paused and you can use the Debugger Controls to step, evaluate expressions, inspect the current
+call stack, etc.
 
 ### Debugging: Command-Line
-<!-- NEED TO VERIFY THIS SECTION IS CORRECT. DOES THE HHVM TOOLBAR TO TASK RUNNER CHANGE AFFECT THIS? -->
+
 You can also debug directly from the command-line.
 
 1. Have a PHP or Hack file active in the [Editing Area](/docs/editor/basics/#editing-area).
-2. Click on the **Toggle Debugger** icon in the [Nuclide toolbar](/docs/features/toolbar/#buttons) or press `Cmd-Shift-Y` to bring up the Debugger Selection window.
+2. Click on the **Toggle Debugger** icon in the [Nuclide toolbar](/docs/features/toolbar/#buttons) or press `Cmd-Shift-A` (`Ctrl-Shift-A` on Linux) to bring up the Debugger Selection window.
 3. Select the remote server where your project is located from the **Connection** drop-down menu. It should default to the remote location of the PHP or Hack file you have open.
 4. Select the file's type from the **Type** drop-down menu.  For either PHP or Hack, choose **PHP**.
 5. Select **Attach** from the **Action** drop-down menu.
@@ -210,7 +205,7 @@ You can also debug directly from the command-line.
 *Note:* If you are debugging a server, you will need to send a request to that server in order for
     the server breakpoint to be hit.
 
-### Output Window
+### Console
 
 While debugging, HHVM will send its stdout to the Console below the Editing Area. This also includes output from `print()` (or similar) statements and stack traces.
 
@@ -257,6 +252,6 @@ There are other Hack and PHP debug settings that can be set as they pertain to H
 
 - Filtering debugging connections by user name (`idekey`). By default, this is set to the user that started the HHVM process (you can override this with `xdebug.idekey` in an `.ini` file).
 - HHVM logging level. The default is `INFO`.
-- Debugging Port. The default is `9000`. If you override this is in an `.ini` file, ensure that your setting matches this setting.
+- Debugging Port. The default is `9000`. If you override this is in an `.ini` file, ensure that the Nuclide setting matches this setting.
 
 Go to `Settings | Packages | Nuclide | Settings` and look for the `nuclide-debugger-php` settings.
