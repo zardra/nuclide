@@ -16,7 +16,7 @@ including inspection, watches, setting breakpoints, step in/over/out, etc.
 
 ## Instantiation
 
-In general, the Debugger is instantiated via `Cmd-Shift-Y` (`Ctrl-Shift-Y` on Linux). You can also
+In general, the Debugger is instantiated via `Cmd-Shift-A` (`Ctrl-Shift-A` on Linux). You can also
 toggle the Debugger through the [Command Palette](/docs/editor/basics/#command-palette) and the
 [Nuclide toolbar](/docs/features/toolbar/#buttons)'s **Toggle Debugger** icon.
 
@@ -36,7 +36,7 @@ attach to a currently running process (e.g., `node`) for debugging.
 ***Example***
 
 If you have a Node project running (e.g, via `npm start` or `node yourfile.js`), press
-`Cmd-Shift-Y` (`Ctrl-Shift-Y` on Linux) to toggle the Debugger; this opens the Debugger Selection window. Then, attach Nuclide to the
+`Cmd-Shift-A` (`Ctrl-Shift-A` on Linux) to toggle the Debugger; this opens the Debugger Selection window. Then, attach Nuclide to the
 relevant `node` process.
 
 ![](/static/images/docs/feature-debugger-basics-attach-target-process.png)
@@ -85,9 +85,6 @@ breakpoints are set as well.
 
 The Debugger Controls are the information control center for the Nuclide Debugger.
 
-<!-- NEED TO REPLACE THIS IMAGE -->
-![](/static/images/docs/feature-debugger-basics-main-debugging-tab.png)
-
 In addition to the specialized areas described below, it also provides mouse-clickable execution,
 [stepping](#basics__stepping), and breakpoint options.
 
@@ -117,7 +114,7 @@ The **Locals** area shows you information about local variables based upon the c
 
 ***Watch Expressions***
 
-The **Watch Expressions** area is for you to keep track of the values of global and local variables. To add a new value to track, enter it in the`add new watch expression` text box. To remove a watched variable, click the `x` icon of the variable you wish to delete.
+The **Watch Expressions** area is for you to keep track of the values of global and local variables. To add a new value to track, enter it in the `add new watch expression` text box. To remove a watched variable, click the `x` icon of the variable you wish to delete.
 
 ***Detaching***
 
@@ -155,27 +152,27 @@ It is essential for any debugger to have a mechanism to step into, over, and out
 Nuclide Debugger provides stepping functionality with shortcuts within the Debugger itself and
 via the [keyboard](/docs/editor/keyboard-shortcuts/#debugger).
 
-![](/static/images/docs/feature-debugger-basics-stepping-icons.png)
+<img src="/static/images/docs/feature-debuggin-basics-stepping-controls.png" align="middle" style="width: 400px" />
 
 ***Example***
 
 Assume we have a breakpoint set at line 22 of `read.js` (before the call to `processSum()`).
 
-![](/static/images/docs/feature-debugger-basics-stepping-example-start.png)
+![](/static/images/docs/feature-debugger-basics-stepping-line22.png)
 
 The following shows what happens when you step into the function. The code execution steps into the actual
 `processSum()` function itself.
 
-![](/static/images/docs/feature-debugger-basics-stepping-example-step-in.png)
+![](/static/images/docs/feature-debugger-basics-stepping-stepin-ex.png)
 
 The following shows what happens when you step over the function. `processSum()` is fully executed,
 and we move on to closing the `readline` object.
 
-![](/static/images/docs/feature-debugger-basics-stepping-example-step-over.png)
+![](/static/images/docs/feature-debugger-basics-stepping-stepover-ex.png)
 
 You can even step into a function that exists in another module.
 
-![](/static/images/docs/feature-debugger-basics-stepping-example-start-other-module.png)
+![](/static/images/docs/feature-debugger-basics-stepping-other-module-ex.png)
 
 ### Evaluation
 
@@ -198,7 +195,7 @@ Here we have a breakpoint before printing out the sum of the two global variable
 This shows printing out the values of the global and local variables, writing simple expressions,
 calling a function in another module (`math.add()`), and inspecting objects.
 
-![](/static/images/docs/feature-debugger-basics-evaluation-example.png)
+![](/static/images/docs/feature-debugger-basics-evaluation-ex.png)
 
 ## Language Specific Debugging
 
