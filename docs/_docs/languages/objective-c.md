@@ -46,7 +46,7 @@ For example, if you add an ending bracket here...
 
 To enable this setting:
 
-1. Open to the [Nuclide Settings](/docs/editor/basics/#preferences-pane) tab either by pressing `Cmd+,` or by going to `Package | Settings View | Open`.  
+1. Open the [Nuclide Settings](/docs/editor/basics/#preferences-pane) tab either by pressing `Cmd+,` (`Ctrl-,` on Linux) or by going to `Package | Settings View | Open`.  
 2. Select **Packages** from the list at the left, and search for `nuclide`.  
 3. Click on the **Settings** button for the `nuclide` package.  
 4. Scroll down until you find `nuclide-objc`, and select the **Enable Automatic Square Bracket Completion** checkbox.
@@ -153,6 +153,6 @@ See the [Buck guide](/docs/features/buck) for how to build, run and debug iOS ap
 ### LLDB Commands
 
 Native iOS debugging uses [LLDB](http://lldb.llvm.org/) as its debugging backend. You can run LLDB
-commands directly in the Nuclide Debugger [Console](#basics__evaluation).
+commands directly in the Nuclide Debugger's [Console](/docs/features/debugger#basics__evaluation).
 
 ![](/static/images/docs/feature-debugger-languages-ios-console.png)
