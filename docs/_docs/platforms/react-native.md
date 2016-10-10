@@ -18,42 +18,38 @@ native iOS and Android applications using the [Flow](/docs/languages/flow) and
 
 If your React Native apps are primarily written in [Flow](/docs/languages/flow), you get all of its
 [features](/docs/languages/flow/#features) within Nuclide, including
-[autocomplete](/docs/languages/flow/#autocomplete),
-[code diagnostics](/docs/languages/flow/#features__code-diagnostics), etc.
+[Autocomplete](/docs/languages/flow/#autocomplete),
+[Code Diagnostics](/docs/languages/flow/#features__code-diagnostics), etc.
 
 ![](/static/images/docs/platform-react-native-feature-autocomplete.png)
 
 > [JavaScript](/docs/languages/other/#javascript) works well with Nuclide as well.
 
-> You can also write [native iOS (Objective-C)](/docs/platforms/ios) with React Native, and get
-> features such as automatic bracket completion from Nuclide when doing so. Native Android code
-> written in conjunction with React Native has [minimal support](/docs/platforms/android).
+> You can also write [native iOS (Objective-C)](/docs/platforms/ios) code with React Native, and get
+> features such as [Automatic Square Bracket Completion](/docs/languages/objective-c/#default-features__automatic-square-bracket-completion) from Nuclide when doing so. Native Android code written in conjunction with React Native has [minimal support](/docs/platforms/android).
 
 ## Running applications
 
 ### Buck Integration
 
 > Buck Integration currently only works with React Native iOS apps. If you have an Android app, you
-> can still use the
-> [command-line](/docs/platforms/react-native/#running-applications__command-line) to run your
+> can still use the [command-line](/docs/platforms/react-native/#running-applications__command-line) to run your
 > application.
 
 If you have built your React Native *iOS* application with Buck, you may be able to utilize the
 built-in Nuclide Buck integration to build and run your application.
 
-Bring up the [Buck build toolbar](/docs/features/toolbar/#buttons) from the Nuclide
-[toolbar](/docs/features/toolbar/) or go to the command palette and search for
-`Nuclide Buck Toolbar: Toggle`.
+Click on the [Toggle Task Runner Toolbar](/docs/features/toolbar/#buttons) button from the Nuclide
+[toolbar](/docs/features/toolbar/) or go to the [Command Palette]() and search for
+`Nuclide Task Runner: Toggle Buck Toolbar`.
 
 ![](/static/images/docs/platform-react-native-running-buck-toolbar.png)
 
 In the Buck toolbar, enter a build target that you specified in your `.buckconfig` file. Nuclide
-will search for targets for you and populate a list; autocomplete of your targets will occur as
+will search for targets for you and populate a list; autocomplete of your targets occurs as
 you type.
 
-After you enter a valid target, the `React Native Server Mode` checkbox will appear, allowing you,
-when checked, to start the the React Native Server (i.e., Packager) when you run or debug your
-application.
+After you enter a valid target, the `React Native Server Mode` checkbox appears. When selected, it allows you to start the the React Native Server (i.e., Packager) when you run or debug your application.
 
 > There is currently a bug as to where you must have a project file open in order for the
 > `React Native Server Mode` checkbox to appear.
