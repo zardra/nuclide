@@ -154,5 +154,3 @@ See the [Buck guide](/docs/features/buck) for how to build, run and debug iOS ap
 
 Native iOS debugging uses [LLDB](http://lldb.llvm.org/) as its debugging backend. You can run LLDB
 commands directly in the Nuclide Debugger's [Console](/docs/features/debugger#basics__evaluation).
-
-![](/static/images/docs/feature-debugger-languages-ios-console.png)
