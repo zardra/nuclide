@@ -5,14 +5,87 @@ layout: docs
 permalink: /docs/features/task-runner/
 ---
 
-Nuclide provides a Task Runner toolbar for building, running, and debugging [Buck](/docs/features/buck), [Swift](/docs/languages/swift), and [Hack/HHVM](/docs/languages/hack) projects.
+Nuclide provides the Task Runner toolbar for building, running, testing, and debugging projects.
+
 
 * TOC
 {:toc}
 
 ## Buck
 
+Nuclide supports the [Build](#build), [Run](#run), [Test](#test), and [Debug](#debug) workflows for [Buck](/docs/features/buck), matching the corresponding Buck command-line tasks.
+
+### Build
+
+The Build task invokes [`buck build`](https://buckbuild.com/command/build.html),
+displaying build output in the [Console](/docs/features/debugger/#basics__evaluation) below the [Editing Area](/docs/editor/basics/#editing-area).
+
+In the Task Runner toolbar's text box, type in the name of the build target exactly
+as you would specify on the command-line, i.e., `//path/to/dir:target_name#flavor`.
+
+Note that the usual leading `//` is optional.
+
+<img src="/static/images/docs/feature-task-runner-buck-build.png" />
+
+Clicking on the Settings button (i.e., the gear icon) opens a dialog where you can provide extra flags to Buck.
+
+<img src="/static/images/docs/feature-task-runner-buck-build-settings.png" width="625" />
+
+Upon clicking **Build**, build progress displays via a blue progress bar below the toolbar and also periodically via messages in the [Console](/docs/features/debugger/#basics__evaluation).
+
+Click the Stop button (i.e., the square icon) at any time to cancel an ongoing build.
+
+<img src="/static/images/docs/feature-task-runer-buck-build-console.png" />
+
+In addition to showing up in the [Console](/docs/features/debugger/#basics__evaluation), C++ compilation errors will surface in the [Diagnostics Table](/docs/editor/basics/#code-diagnostics).  Buck diagnostics will be cleared upon triggering a new build.
+
+<img src="/static/images/docs/feature-task-runner-buck-build-diagnostics.png" />
+
+### Run
+
+The Run task is only enabled for iOS and Android application targets ([`apple_bundle`](https://buckbuild.com/rule/android_binary.html), [`android_binary`](https://buckbuild.com/rule/android_binary.html), and [`apk_genrule`](https://buckbuild.com/rule/apk_genrule.html) rules). It invokes [`buck install --run`](https://buckbuild.com/command/install.html) and builds, installs, then runs the app. Build output will be reported as documented in the [Build workflow](#build) section above.
+
+<img src="/static/images/docs/feature-task-runner-buck-run.png" />
+
+The iOS simulator type can be explicitly selected via the drop-down menu to the right of the toolbar's Settings button.
+
+The **React Native Server Mode** checkbox optionally starts the React Native packager
+and debugging server while the app installs.
+
+### Test
+
+The Test task invokes [`buck test`](https://buckbuild.com/command/test.html), building and running valid test targets (e.g., `cxx_test`).
+Build output will be reported as documented in the [Build workflow](#build) section above.
+
+### Debug
+
+The Debug task is only enabled for the following target types:
+
+- iOS applications (`apple_bundle`)
+- C++ unit tests (`cxx_test`)
+- C++ binaries (`cxx_binary`)
+
+The [LLDB debugger](/docs/languages/cpp/#debugging) is invoked after a successful build in all three cases, but with slight variations.
+
+*iOS Applications*
+
+For iOS applications, the Debug task invokes [`buck install --run --wait-for-debugger`](https://buckbuild.com/command/install.html), then attaches LLDB to the simulator process once the app starts.
+
+As with the Run task, the iOS simulator type can be selected from the drop-down menu to the right of the toolbar's Settings button.  The `React Native Server Mode` checkbox must be selected for React Native apps to enable JavaScript debugging.
+
+*C++ unit tests*
+
+For C++ unit tests, LLDB is launched against the unit test binary with the `args` and `env` parameters [specified by the `cxx_test` target](https://buckbuild.com/rule/cxx_test.html) after a successful `buck build`.
+
+*C++ binaries*
+
+For C++ binaries, LLDB is launched directly against the output binary after a successful `buck build`.  Extra launch arguments can be specified using the Settings button.
+
+<img src="/static/images/docs/feature-task-runner-buck-debug.png" width="564" />
+
 ## Swift
+
+The Task Runner toolbar can build [Swift](/docs/languages/swift) packages and run their tests.
 
 ### Building a Swift package
 
@@ -25,8 +98,8 @@ a Swift package root.) Build output is displayed in the [Console](/docs/features
 
 ![](/static/images/docs/feature-task-runner-swift-build-output.png)
 
-You can customize build settings, such as whether to build the package in a "Debug" or "Release" configuration, by clicking the gear icon to the right
-of the Swift Task toolbar.
+You can customize build settings, such as whether to build the package in a *Debug* or *Release* configuration, by clicking the Settings button (i.e., the gear icon) to the right
+of the toolbar's text box.
 
 ![](/static/images/docs/feature-task-runner-swift-build-settings.png)
 
@@ -40,11 +113,11 @@ to a Swift package root.) Test output is displayed in the [Console](/docs/featur
 
 ![](/static/images/docs/feature-task-runner-swift-test-output.png)
 
-Clicking the gear icon to the right of the Swift Task toolbar displays additional settings for running your Swift package's tests.
+Clicking the Settings button (i.e., the gear icon) to the right of the toolbar's text box displays additional settings for running your Swift package's tests.
 
 ## HHVM Debug Toolbar
 
-Nuclide provides an HHVM toolbar in the Task Runner. You can launch the toolbar by clicking the **Toggle Task Runner Toolbar** button in the [Nuclide toolbar](/docs/features/toolbar/#buttons) or from the [Command Palette](/docs/editor/basics/#command-palette) with `Nuclide Task Runner: Toggle HHVM Toolbar`.
+Nuclide provides an HHVM toolbar in the Task Runner for debugging [Hack](/docs/languages/hack) projects. You can launch the toolbar by clicking the **Toggle Task Runner Toolbar** button in the [Nuclide toolbar](/docs/features/toolbar/#buttons) or from the [Command Palette](/docs/editor/basics/#command-palette) with `Nuclide Task Runner: Toggle HHVM Toolbar`.
 
 ![](/static/images/docs/feature-task-runner-hack-toolbar.png)
 
