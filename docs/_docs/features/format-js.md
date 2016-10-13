@@ -5,10 +5,7 @@ layout: docs
 permalink: /docs/features/format-js/
 ---
 
-<!-- > This feature is currently experimental. For example, this currently does not handle using relative
-> paths for the automatic `import`s and `require`s. -->
-
->[Format-js](https://atom.io/packages/nuclide-format-js) is now available as a separate Atom package for use with Nuclide.
+>[Format-js](https://atom.io/packages/nuclide-format-js) is now available as a separate Atom package for use with Nuclide. However, it is currently experimental. For example, this currently does not handle using relative paths for the automatic requires.
 
 Format-js is a package with a goal of getting rid of worrying about every little formatting detail you might run across while writing
 [Flow](/docs/languages/flow) or [JavaScript](/docs/langauges/other/#javascript) code.  For more information about the Format-js package visit the [Format-js Atom package page](https://atom.io/packages/nuclide-format-js).
@@ -43,8 +40,16 @@ you are using in your code that may need to be `require`d. The possible `require
 You can then check if these are correct and modify accordingly. For example, maybe instead of
 `const`, you want `var`.
 
-<!-- ## Settings -->
+## Settings
 
-<!-- There are customizable settings for this Format-js plugin in the Nuclide Settings. -->
+There are customizable settings for the Format-js package.
 
-<!-- ![](/static/images/docs/feature-format-js-settings.png) -->
+1. Open the [Nuclide Settings](/docs/editor/basics/#preferences-pane) tab either by pressing `Cmd+,` (`Ctrl-,` on Linux) or by going to `Package | Settings View | Open`.
+2. Select **Packages** from the list at the left, and search for `nuclide-format-js`.
+3. Click on the **Settings** button for the Format-js package.
+
+![](/static/images/docs/feature-format-js-settings.png)
+
+You can also enable or disable keybindings in the Format-js settings.
+
+![](/static/images/docs/feature-format-js-keybindings.png)
