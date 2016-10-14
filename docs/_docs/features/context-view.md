@@ -23,3 +23,7 @@ To toggle the Context View panel, you can:
 3. Click on the **Toggle Context View** [button](/docs/features/toolbar/#buttons) on the [Nuclide toolbar](/docs/features/toolbar).
 
 ## Definition Preview
+
+When you click on a symbol in the [Editing Area](/docs/editor/basics/#editing-area), the symbol's definition will be highlighted in the Context View panel.  
+
+Clicking on the **Open in main editor** button at the bottom of the Context View panel moves the cursor to that definition be it in the current file or a different one.
