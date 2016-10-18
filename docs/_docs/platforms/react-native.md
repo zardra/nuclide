@@ -28,9 +28,9 @@ If your React Native apps are primarily written in [Flow](/docs/languages/flow),
 > You can also write [native iOS (Objective-C)](/docs/platforms/ios) code with React Native, and get
 > features such as [Automatic Square Bracket Completion](/docs/languages/objective-c/#default-features__automatic-square-bracket-completion) from Nuclide when doing so. Native Android code written in conjunction with React Native has [minimal support](/docs/platforms/android).
 
-## Running applications
+<!-- ## Running applications -->
 
-### Buck Integration
+<!-- ### Buck Integration
 
 > Buck Integration currently only works with React Native iOS apps. If you have an Android app, you
 > can still use the [command-line](/docs/platforms/react-native/#running-applications__command-line) to run your
@@ -81,7 +81,7 @@ Then at the command-line:
 ```bash
 $ react-native run-ios
 $ react-native run-android
-```
+``` -->
 
 ## Debugging
 
@@ -92,7 +92,7 @@ first-class support within Nuclide. The debugger is no exception.
 > [simulator logs](#simulator-logs).
 
 From Nuclide, you can start a React Native development server, inspect React Native elements and
-use the [debugger](/docs/features/debugger#basics) to set and stop on breakpoints, etc.
+use the [Debugger](/docs/features/debugger#basics) to set and stop on breakpoints, etc.
 
 > In order to use React Native within Nuclide, you must
 > [install](https://facebook.github.io/react-native/docs/getting-started.html) it.
@@ -106,34 +106,32 @@ from the root of your project.
 
 ### Command Palette
 
-All React Native features are currently available from the
-[command palette](/docs/editor/basics/#command-palette).
+All React Native features are currently available from the [Command Palette](/docs/editor/basics/#command-palette).
 
-![](/static/images/docs/feature-debugger-languages-react-native-command-palette.png)
+![](/static/images/docs/platform-react-native-debugging-command-palette.png)
 
 ### React Native Server
 
 The first step to debugging React Native is to launch the React Native Server from within Nuclide.
-Using the [command palette](/docs/editor/basics/#command-palette), launch
-`Nuclide React Native: Start Packager`. This will bring up a tab in the
-[main editing](/docs/editor/basics/#editing-area) area titled "React Native Server".
+Using the [Command Palette](/docs/editor/basics/#command-palette), launch
+`Nuclide React Native: Start Packager`.  The [Console](/docs/features/debugger/#basics__evaluation) panel shows output indicating that the React Native Packager started or if it encountered any errors.
 
-![](/static/images/docs/feature-debugger-languages-react-native-server.png)
+![](/static/images/docs/platform-react-native-packager.png)
 
-Notice that the server is running on the default port `8081`. You can stop and restart the server
+Notice that the server is running on the default `port 8081`. You can stop and restart the server
 at anytime.
 
 ### Prime the Debugger
 
 After starting the server, you can prime the React Native debugger for when the application begins
-running. From the [command palette](/docs/editor/basics/#command-palette), launch
+running. From the [Command Palette](/docs/editor/basics/#command-palette), launch
 `Nuclide React Native: Start Debugging`.
 
-You might see that the Nuclide debugger will not load yet; instead showing you a waiting condition.
+You might see that the Nuclide Debugger UI appears but doesn't start, instead showing you a waiting condition.
 
-![](/static/images/docs/feature-debugger-languages-react-native-debugger-priming.png)
+![](/static/images/docs/platform-react-native-debugger-waititng.png)
 
-This means that the debugger is waiting to attach to the actually running process of the React
+This means that the Debugger is waiting to attach to the actually running process of the React
 Native application.
 
 ### Run the React Native Application
@@ -147,11 +145,11 @@ Here is an example of how you might run the Application
 $ react-native run-ios
 ```
 
-This should bring up the simulator with your running application inside.
+This should bring up the Simulator with your running application inside.
 
 ### Enable Debugging from the Application
 
-From the simulator, you will want to enable debugging the application. Press `cmd-D` (`ctrl-D` on
+From the Simulator, you will want to enable debugging the application. Press `Cmd-D` (`Ctrl-D` on
 Linux). This will bring up the debug options for your application. Choose `Debug in Chrome`.
 
 ![](/static/images/docs/feature-debugger-languages-react-native-application-debug-options.png)
@@ -183,23 +181,24 @@ Now you can start debugging your React Native application as
 ![](/static/images/docs/feature-debugger-languages-react-native-debugging.png)
 
 ### Element Inspector
+<!-- THIS WHOLE SECTION MAY BE OBSOLETE -->
 
-The React Native debugger in Nuclide also provides an Element Inspector, where you can view and
+The React Native Debugger in Nuclide also provides an Element Inspector, where you can view and
 toggle properties of your application.
 
-From the [command palette](/docs/editor/basics/#command-palette), choose
+From the [Command Palette](/docs/editor/basics/#command-palette), choose
 `Nuclide React Native Inspector: Show`. This will bring up a tab in the
 [main editing](/docs/editor/basics/#editing-area) area titled "React Native Inspector".
 
 ![](/static/images/docs/feature-debugger-languages-react-native-element-inspector.png)
 
 To see the actual elements highlighted in the Nuclide element inspector also highlighted in the
-simulator, you must enable the simulator inspctor as well. Press `cmd-D` (`ctrl-D on Linux`) within
+simulator, you must enable the simulator inspector as well. Press `Cmd-D` (`Ctrl-D` on Linux) within
 the simulator and choose `Show Inspector`.
 
 ![](/static/images/docs/feature-debugger-languages-react-native-application-show-inspector.png)
 
 ## Simulator Logs
 
-Nuclide supports the [iOS emulator logs](/docs/platforms/ios#simulator-logs) and
-[Android emulator logs](/docs/platforms/android#emulator-logs) directly within Nuclide.
+Nuclide supports the [iOS Simulator logs](/docs/platforms/ios#simulator-logs) and
+[Android Emulator logs](/docs/platforms/android#emulator-logs) directly within Nuclide.
