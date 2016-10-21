@@ -131,7 +131,7 @@ toggle properties of your application.
 From the [Command Palette](/docs/editor/basics/#command-palette), choose `Nuclide React Native Inspector: Show` to open the **React Native Inspector** tab in the
 main [Editing Area](/docs/editor/basics/#editing-area).
 
-![](/static/images/docs/feature-debugger-languages-react-native-element-inspector.png)
+![](/static/images/docs/platform-react-native-element-inspector.png)
 
 To see the actual elements highlighted in the Nuclide Element Inspector also highlighted in the
 Simulator, you must enable the Simulator Inspector as well. Press `Cmd-D` (`Ctrl-D` on Linux) within
