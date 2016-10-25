@@ -36,8 +36,10 @@ or by installing the `merlin` OPAM package.
 
 OCaml's integration into Nuclide provides you with productivity features such as:
 
-* Autocomplete
-* Jump to Definition
+* [Autocomplete](#ocaml__auto-complete)
+* [Jump to Definition](#ocaml__jump-to-definition)
+* [Type Hinting](#ocaml__type-hinting)
+* [Code Diagnostics](#ocaml__code-diagnostics)
 
 It requires that `ocamlmerlin` be installed on your system and properly configured for your
 project. `ocamlmerlin` should be in your `$PATH` environment variable. If it is not, you may specify the path to
@@ -47,3 +49,46 @@ project. `ocamlmerlin` should be in your `$PATH` environment variable. If it is 
 2. Select **Packages** from the list at the left, and search for `nuclide`.
 3. Click on the **Settings** button for the `nuclide` package.
 4. Scroll down until you find `nuclide-ocaml`, and enter the custom path in the **Path to Merlin Executable** text box.
+
+### Autocomplete
+
+Given that Nuclide has access to all of the type information within your project along with the
+built-in types provided by OCaml, autocomplete just works.
+
+<!-- INSERT SCREENSHOT HERE -->
+
+### Jump to Definition
+
+Nuclide provides a jump to definition/symbol feature for OCaml programs.
+
+<!-- INSERT SCREENSHOT HERE -->
+
+### Type Hinting
+
+If you hover over a variable in your OCaml file, you can get the type of the variable directly inline.
+
+<!-- INSERT SCREENSHOT HERE -->
+
+In fact, you can even pin that type hint so that it always displays. Just click on the pin icon when hovering over a variable to pin it.
+
+<!-- INSERT SCREENSHOT HERE -->
+
+The highlighted variables show that their type variables have been pinned. If you hover over the
+type hint, its associated variable will have motion in its highlight.
+
+Click the `x` icon of a pinned type hint to remove it.
+
+> Pinned type hints can be moved anywhere within the editor.
+
+### Code Diagnostics
+
+If you write code that doesn't pass the OCaml typechecker, Nuclide will provide you error details in
+both its [Code Diagnostics](/docs/editor/basics/#status-bar__code-diagnostics) pane and inline
+within the [Editing Area](/docs/editor/basics/#editing-area).
+
+<!-- INSERT SCREENSHOT HERE -->
+
+Hover over the sideways red triangle in the [gutter](/docs/editor/basics/#gutter) to see the OCaml
+error inline.
+
+<!-- INSERT SCREENSHOT HERE -->
