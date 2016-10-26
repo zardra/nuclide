@@ -52,10 +52,9 @@ project. `ocamlmerlin` should be in your `$PATH` environment variable. If it is 
 
 ### Autocomplete
 
-Given that Nuclide has access to all of the type information within your project along with the
-built-in types provided by OCaml, autocomplete just works.
+Given that Nuclide has access to all of the type information within your project along with the built-in types provided by OCaml, autocomplete just works.
 
-<!-- INSERT SCREENSHOT HERE -->
+![](/static/images/docs/languages-ocaml-autocomplete.png)
 
 ### Jump to Definition
 
@@ -82,13 +81,10 @@ Click the `x` icon of a pinned type hint to remove it.
 
 ### Code Diagnostics
 
-If you write code that doesn't pass the OCaml typechecker, Nuclide will provide you error details in
-both its [Code Diagnostics](/docs/editor/basics/#status-bar__code-diagnostics) pane and inline
-within the [Editing Area](/docs/editor/basics/#editing-area).
+If you write code that doesn't pass the OCaml typechecker, Nuclide will provide you error details in both its [Code Diagnostics](/docs/editor/basics/#status-bar__code-diagnostics) pane and inline within the [Editing Area](/docs/editor/basics/#editing-area).
 
-<!-- INSERT SCREENSHOT HERE -->
+![](/static/images/docs/languages-ocaml-diagnostics-gutter.png)
 
-Hover over the sideways red triangle in the [gutter](/docs/editor/basics/#gutter) to see the OCaml
-error inline.
+Hover over the sideways yellow (warning) or red (error) triangle in the [gutter](/docs/editor/basics/#gutter) to see the OCaml error inline.
 
-<!-- INSERT SCREENSHOT HERE -->
+![](/static/images/docs/languages-ocaml-diagnostics-message.png)
