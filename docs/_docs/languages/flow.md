@@ -97,7 +97,17 @@ Click the `x` icon of a pinned type hint to remove it.
 
 ### Type Coverage
 
+Nuclide can show you how much of your Flow file is covered by the type system with Type Coverage.
 
+![](/static/images/docs/language-flow-type-coverage.png)
+
+If the percentage is less than 100%, you can toggle the Type Coverage inline display to show you where the issues are.
+
+From the [Command Palette](/docs/editor/basics/#command-palette), choose `Nuclide Type Coverage: Toggle Inline Display`. You can also either press `Ctrl-Option-Shift-V` (`Ctrl-Alt-Shift-V` on Linux) or simply click on the percentage displayed in the [Status Bar](/docs/editor/basics/#status-bar).
+
+Hover over any sideways triangles that appear in the gutter to see the type check issue inline, or open the [Diagnostics Table](/docs/editor/basics/#status-bar__code-diagnostics) to see them all listed together.  Clicking on any issue in the Diagnostics Table will highlight the associated line.
+
+![](/static/images/docs/language-flow-type-coverage-inline.png)
 
 ## Debugging
 
