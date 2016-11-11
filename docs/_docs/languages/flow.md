@@ -19,7 +19,7 @@ Nuclide has deep, built-in support for [Flow-enabled](http://flowtype.org) JavaS
 In order to fully use the integration of Flow, you must have Flow installed on your system:
 
 1. [Install Flow](http://flowtype.org/docs/getting-started.html#installing-flow).
-2. If you are new to Flow, [five simple example](http://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs. The
+2. If you are new to Flow, [five simple examples](http://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs. The
 key items of note are:
    * The `flow` path is in your `$PATH` environment variable. If it is not in your `$PATH` environment variable for any reason, you can specify the
    path to the `flow` binary in `Settings | Packages | Nuclide | Settings | nuclide-flow: Path to Flow Executable`.
@@ -34,6 +34,7 @@ Flow's integration into Nuclide provides you with productivity features such as:
 * [Autocomplete](#features__autocomplete)
 * [Jump to Definition](#features__jump-to-definition)
 * [Inline (mouseover) type hinting](#features__type-hinting)
+* [Inline type coverage](#features__type-coverage)
 
 > These features will not work properly unless you are working with Flow-enabled JavaScript since
 > they require a `.flowconfig` file in your project root and the ability to run the Flow
@@ -93,6 +94,10 @@ type hint, its associated variable will have motion in its highlight.
 Click the `x` icon of a pinned type hint to remove it.
 
 > Pinned type hints can be moved anywhere within the editor.
+
+### Type Coverage
+
+
 
 ## Debugging
 
