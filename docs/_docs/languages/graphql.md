@@ -28,10 +28,30 @@ GraphQL's integration into Nuclide provides you with productivity features such 
 
 ### Autocomplete
 
+![](/static/images/docs/language-graphql-autocomplete.png)
+
 ### Go to Definition
+
+Nuclide provides a **Go to Definition** feature for GraphQL files.
+
+For example, if you want to go to the definition of `pilotFragment`, hover over `...pilotFragment` and either press **Cmd-<click>** or **Cmd-Option-Enter**.  You can also right-click on the fragment and select **Go to Declaration** from the pop-up menu.
+
+![](/static/images/docs/language-graphql-gotodefinition.png)
+
+The cursor will jump to the definition even if it's in another file.
+
+![](/static/images/docs/language-graphql-definitionjump.png)
 
 ### Outline View
 
 ### Context View
 
 ### Code Diagnostics
+
+Nuclide has code diagnostics that will show errors in your `.graphql` file.  You can see the errors in two places, inline within the [Editing Area](/docs/editor/basics/#editing-area) and in the [Code Diagnostics](/docs/editor/basics/#status-bar__code-diagnostics) pane below.
+
+![](/static/images/docs/language-graphql-diagnosticspane.png)
+
+Hover over the sideways red triangle in the [gutter](/docs/editor/basics/#gutter) to see the error inline.
+
+![](/static/images/docs/language-graphql-inline-error.png)
