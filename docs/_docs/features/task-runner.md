@@ -15,6 +15,10 @@ Nuclide provides the Task Runner toolbar for building, running, testing, and deb
 
 Nuclide supports the [Build](#build), [Run](#run), [Test](#test), and [Debug](#debug) workflows for [Buck](/docs/features/buck), matching the corresponding Buck command-line tasks.
 
+>Your project must contain a `.buckconfig` file for the Buck tasks to be available in the Task Runner.
+
+Click the **Toggle Task Runner Toolbar** button on the [Nuclide toolbar](/docs/features/toolbar/#buttons) to display options for building, running, testing, and debugging your Buck project.
+
 ### Build
 
 The Build task invokes [`buck build`](https://buckbuild.com/command/build.html),
@@ -47,10 +51,7 @@ The Run task is only enabled for iOS and Android application targets ([`apple_bu
 
 ![](/static/images/docs/feature-task-runner-buck-run.png)
 
-The iOS simulator type can be explicitly selected via the drop-down menu to the right of the toolbar's **Settings** button.
-
-The **React Native Server Mode** checkbox optionally starts the React Native packager
-and debugging server while the app installs.
+The iOS simulator type can be explicitly selected via the drop-down menu to the right of the toolbar's **Settings** button (i.e., the gear icon).
 
 ### Test
 
@@ -75,7 +76,7 @@ The [LLDB debugger](/docs/languages/cpp/#debugging) is invoked after a successfu
 
 For iOS applications, the Debug task invokes [`buck install --run --wait-for-debugger`](https://buckbuild.com/command/install.html), then attaches LLDB to the simulator process once the app starts.
 
-As with the Run task, the iOS simulator type can be selected from the drop-down menu to the right of the toolbar's **Settings** button.  The **React Native Server Mode** checkbox must be selected for React Native apps to enable JavaScript debugging.
+As with the Run task, the iOS simulator type can be selected from the drop-down menu to the right of the toolbar's **Settings** button (i.e., the gear icon).
 
 *C++ unit tests*
 
@@ -83,18 +84,21 @@ For C++ unit tests, LLDB is launched against the unit test binary with the `args
 
 *C++ binaries*
 
-For C++ binaries, LLDB is launched directly against the output binary after a successful `buck build`.  Extra launch arguments can be specified using the **Settings** button.
+For C++ binaries, LLDB is launched directly against the output binary after a successful `buck build`.  Extra launch arguments can be specified using the **Settings** button (i.e., the gear icon).
 
 ## Swift
 
 The Task Runner toolbar can build [Swift](/docs/languages/swift) packages and run their tests.
 
+>Your project must contain a `Package.swift` file for the Swift tasks to be available in the Task Runner.
+
+Click the **Toggle Task Runner Toolbar** button on the [Nuclide toolbar](/docs/features/toolbar/#buttons) to display options for building or testing a Swift package.
+
 ### Building a Swift package
 
-1. Click the **Toggle Task Runner Toolbar** button on the [Nuclide toolbar](/docs/features/toolbar/#buttons) (or use the [Command Palette](/docs/editor/basics/#command-palette) to issue the **Nuclide Task Runner: Toggle Swift Toolbar** command) to display options for building a Swift package.<br /><br />
 <img src="/static/images/docs/feature-task-runner-swift-build-toolbar.png" style="width:700px" />
 
-2. Enter the path to a Swift package's root directory, then click the **Build** button (i.e., the crossed tools icon) to build the package. (This path is entered automatically if your project root is set to a Swift package root.) Build output is displayed in the [Console](/docs/features/debugger/#basics__evaluation) below the [Editing Area](/docs/editor/basics/#editing-area).
+Enter the path to a Swift package's root directory, then click the **Build** button (i.e., the crossed tools icon) to build the package. (This path is not needed if your project's working root contains a Swift package.) Build output is displayed in the [Console](/docs/features/debugger/#basics__evaluation) below the [Editing Area](/docs/editor/basics/#editing-area).
 
 ![](/static/images/docs/feature-task-runner-swift-build-output.png)
 
@@ -106,7 +110,7 @@ You can customize build settings, such as whether to build the package in a *Deb
 
 <img src="/static/images/docs/feature-task-runner-swift-test-toolbar.png" style="width:700px" />
 
-Enter the path to a Swift package's root directory, then click the **Test** button (i.e., the checkmark icon) to run the package's tests. (This path is entered automatically if your project root is set to a Swift package root.) Test output is displayed in the [Console](/docs/features/debugger/#basics__evaluation) below the [Editing Area](/docs/editor/basics/#editing-area).
+Enter the path to a Swift package's root directory, then click the **Test** button (i.e., the checkmark icon) to run the package's tests.  (This path is not needed if your project's working root contains a Swift package.) Test output is displayed in the [Console](/docs/features/debugger/#basics__evaluation) below the [Editing Area](/docs/editor/basics/#editing-area).
 
 ![](/static/images/docs/feature-task-runner-swift-test-output.png)
 
@@ -114,7 +118,7 @@ Clicking the **Settings** button (i.e., the gear icon) to the right of the toolb
 
 ## HHVM Debug Toolbar
 
-Nuclide provides an HHVM toolbar in the Task Runner for debugging [Hack](/docs/languages/hack) projects. You can launch the toolbar by clicking the **Toggle Task Runner Toolbar** button in the [Nuclide toolbar](/docs/features/toolbar/#buttons) or from the [Command Palette](/docs/editor/basics/#command-palette) with `Nuclide Task Runner: Toggle HHVM Toolbar`.
+Nuclide provides an HHVM toolbar in the Task Runner for debugging [Hack](/docs/languages/hack) projects. You can launch the toolbar by clicking the **Toggle Task Runner Toolbar** button in the [Nuclide toolbar](/docs/features/toolbar/#buttons).
 
 ![](/static/images/docs/feature-task-runner-hack-toolbar.png)
 
